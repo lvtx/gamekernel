@@ -1,0 +1,37 @@
+Test Platform:
+    CPU: Intel(R) Core(TM)2 Duo CPU E6550 (2.33GHz x 2)
+    RAM: 2GB
+    OS: Windows XP Professional SP2
+
+
+[nedmalloc]
+
+Multi-thread test:
+  Allocating 1000000 blocks: 78ms
+  Freeing 1000000 blocks in multithreading: 78ms
+
+Single-thread test:
+  Allocating 1000000 blocks: 63ms
+  Freeing 1000000 blocks: 78ms
+
+
+[Windows Low-fragmentation Heap]
+
+Multi-thread test:
+  Allocating 1000000 blocks: 109ms
+  Freeing 1000000 blocks in multithreading: 62ms
+
+Single-thread test:
+  Allocating 1000000 blocks: 94ms
+  Freeing 1000000 blocks: 63ms
+
+
+[MSVCRT malloc]
+
+Multi-thread test:
+  Allocating 1000000 blocks: 187ms
+  Freeing 1000000 blocks in multithreading: 203ms
+
+Single-thread test:
+  Allocating 1000000 blocks: 172ms
+  Freeing 1000000 blocks: 172ms
