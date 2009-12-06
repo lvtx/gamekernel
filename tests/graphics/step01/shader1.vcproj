@@ -233,6 +233,22 @@
 			Name="Gfx"
 			>
 			<File
+				RelativePath=".\BasicModel.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\BasicModel.h"
+				>
+			</File>
+			<File
+				RelativePath=".\BumpSkinModel.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\BumpSkinModel.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Effect.cpp"
 				>
 			</File>
@@ -241,11 +257,27 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Model.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Model.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Renderer.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\Renderer.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SkinModel.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SkinModel.h"
 				>
 			</File>
 			<File
