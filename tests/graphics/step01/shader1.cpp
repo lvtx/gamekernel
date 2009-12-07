@@ -65,7 +65,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			DispatchMessage(&mssg);
 
 		} else {
-			renderer.BeginSence()();
+			renderer.BeginSence();
             model.Draw( &renderer );
 			renderer.EndSecenet();
 		}

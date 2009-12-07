@@ -257,6 +257,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\IndexBuffer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\IndexBuffer.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Model.cpp"
 				>
 			</File>
@@ -281,11 +289,27 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Texture.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Texture.h"
+				>
+			</File>
+			<File
 				RelativePath=".\TriMesh.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\TriMesh.h"
+				>
+			</File>
+			<File
+				RelativePath=".\VertexBuffer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\VertexBuffer.h"
 				>
 			</File>
 		</Filter>
