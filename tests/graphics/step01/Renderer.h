@@ -1,5 +1,11 @@
 #pragma once 
 
+#include "Effect.h"
+#include "IndexBuffer.h"
+#include "VertexBuffer.h"
+
+#include <d3d9.h>
+
 namespace gfx
 {
 /**
@@ -20,26 +26,33 @@ public:
 		Params() : w(1024), h(768), windowed( true ), hwnd( NULL ) {}
 	};
 
-public:
+public:	
 	Renderer();
 	~Renderer();
 
 	/// Initialize renderer
 	bool Init( const Params& params );
 
-	/// 
-	void SetEffect( Effect* effect );
-	void SetMesh( TriMesh* mesh );
+	/// Clear and BeginScene
+	bool BeginScene();
 
-	/// Begin rendering with effect
-	void Begin();
+	/// Set stream source to draw
+	void SetStreamSource( VertexBuffer* vbuf );
 
-	/// Render
-	void Render();
+	/// Set indices to draw
+	void SetIndices( IndexBuffer* ibuf );
 
-	void End();
+	/// DIP call for triangles
+	void DrawIndexed( int baseIndex,
+					  uint minIndex, 
+					  uint numVertices, 
+					  uint startIndex, 
+					  uint primitiveCount );
 
-	/// When lost the device
+	/// EndScene and Present
+	void EndScene();
+
+	/// EndScene and Present
 	void OnLost();
 
 	/// When restored the device
@@ -50,11 +63,22 @@ public:
 
 	int GetError() const;
 
+	VertexBuffer* 	CreateVertexBuffer( uint triangleCount, uint stride, uint fvf );
+	IndexBuffer* 	CreateIndexBuffer( uint faceCount );
+	Effect* 		CreateEffect( const std::string& file );
+	Textuer* 		CreateTexture( const std::string& file );
+
 private:
-	Params 		m_params;
-	int 		m_error;
-	Effect* 	m_effect;
-	TriMesh* 	m_mesh;
+	bool createDirect3d();
+	bool createDevice();
+	void releaseDirect3d();
+	void releaseDevice();
+
+private:
+	Params 				m_params;
+	IDirect3D9* 		m_direct3d;
+	IDirect3DDevice9* 	m_device;
+	int 				m_error;
 };
 
 inline 

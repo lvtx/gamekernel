@@ -1,7 +1,13 @@
 #pragma once 
 
+#include <d3d9.h>
+#include <d3dx9effect.h>
+#include <string>
+
 namespace gfx
 {
+class Renderer;
+class Model; 
 
 /**
  * @class Effect
@@ -11,23 +17,23 @@ namespace gfx
 class Effect 
 {
 public:
-	Effect();
+	Effect( ID3DXEFFECT* effect );
 	~Effect();
 
-	/// create effect from file 
-	bool Init( const std::string& file );	
+	bool SetMatrix( const std::string& name, D3DXMATRIXA16* matrix );
+	bool SetTexture( const std::string& name, Texture* tex );
+	bool SetValue( const std::string& name, void* v, uint size );
 
-	// set matrix, texture, and other variables  
-	void SetMatrix();
-	void SetTexture();
-
-	bool Begin();
-	void End();
-
+	bool Begin( uint& passes ); 
+	bool BeginPass( uint pass );
+	bool EndPass();
+	bool End();
+	
 	void OnLost();
 	void OnRestored();
 
-	void Fini();
+private:
+	ID3DXEFFECT* 	m_effect;
 };
 
 } // namespace gfx

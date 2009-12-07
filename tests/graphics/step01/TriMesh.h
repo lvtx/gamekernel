@@ -15,6 +15,7 @@ struct Uv {
 struct TriMesh 
 {
 	static uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1;
+	static uint STRIDE = sizeof( TriMesh );
 
 	float	x, y, z; 	// vertex pos
 	int		color;		// vertex color
@@ -30,6 +31,7 @@ struct TriMesh
 struct TriSkinMesh 
 {
 	static uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1;
+	static uint STRIDE = sizeof( TriSkinMesh );
 
 	float x, y, z; 		// vertex pos
 	int   color;		// vertex color
@@ -40,13 +42,14 @@ struct TriSkinMesh
 };
 
 /**
- * @struct TriTexMesh
+ * @struct TriBumpSkinMesh
  *
  * Mesh for 4 tex and 4 weights
  */
-struct TriTexSkinMesh 
+struct TriBumpSkinMesh 
 {
 	static uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1 | D3DFVF_TEX2 | D3DFVF_TEX3;
+	static uint STRIDE = sizeof( TriBumpSkinMesh );
 
 	float	x, y, z;	// vertex pos
 	int		color;		// vertex color

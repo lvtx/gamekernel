@@ -17,6 +17,8 @@ BOOL				InitInstance(HINSTANCE, int);
 LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
 
+Renderer::Params gParams; 
+
 int APIENTRY _tWinMain(HINSTANCE hInstance,
                      HINSTANCE hPrevInstance,
                      LPTSTR    lpCmdLine,
@@ -42,19 +44,36 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 	hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_SHADER1));
 
-	gRenderer.Init( params );
+	BasicModel model; 
 
-	// Main message loop:
-	while (GetMessage(&msg, NULL, 0, 0))
-	{
-		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
-		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
+	model.Load( "test.bmt" );
+
+	Renderer renderer;
+
+	renderer.Init( params );
+
+	PeekMessage( &msg, NULL, 0, 0, PM_NOREMOVE);
+
+	// run till completed
+
+	while (mssg.message!=WM_QUIT) {
+
+		// is there a message to process?
+
+		if (PeekMessage( &mssg, NULL, 0, 0, PM_REMOVE)) {
+			TranslateMessage(&mssg);
+			DispatchMessage(&mssg);
+
+		} else {
+			renderer.BeginSence()();
+            model.Draw( &renderer );
+			renderer.EndSecenet();
 		}
 	}
+	
+	renderer.Fini();
 
-	gRenderer.Fini();
+	model.Unload();
 
 	return (int) msg.wParam;
 }
@@ -118,6 +137,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    {
       return FALSE;
    }
+
+   gParams.hwnd = hWnd;
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
