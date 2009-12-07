@@ -2,9 +2,11 @@
 
 #include "Effect.h"
 #include "IndexBuffer.h"
+#include "Texture.h"
 #include "VertexBuffer.h"
 
 #include <d3d9.h>
+#include <d3dx9.h>
 
 namespace gfx
 {
@@ -66,7 +68,7 @@ public:
 	VertexBuffer* 	CreateVertexBuffer( uint triangleCount, uint stride, uint fvf );
 	IndexBuffer* 	CreateIndexBuffer( uint faceCount );
 	Effect* 		CreateEffect( const std::string& file );
-	Textuer* 		CreateTexture( const std::string& file );
+	Texture* 		CreateTexture( const std::string& file );
 
 private:
 	bool createDirect3d();

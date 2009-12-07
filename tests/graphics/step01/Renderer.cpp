@@ -2,13 +2,13 @@
 
 #include "Renderer.h"
 
-#include 
+using namespace gfx;
 
 Renderer::Renderer()
 : m_params()
+, m_direct3d( 0 )
+, m_device( 0 )
 , m_error( 0 )
-, m_effect( 0 )
-, m_mesh( 0 )
 {
 }
 
@@ -83,7 +83,7 @@ Renderer::CreateVertexBuffer( uint triangleCount, uint stride, uint fvf )
 {
 	IDirect3DVertexBuffer9* vb; 
 
-	m_device->CreateVertexBuffer( triangelCount*stride, 
+	m_device->CreateVertexBuffer( triangleCount*stride, 
                                   D3DUSAGE_WRITEONLY, 
 								  fvf,
 								  D3DPOOL_MANAGED, 
@@ -92,16 +92,16 @@ Renderer::CreateVertexBuffer( uint triangleCount, uint stride, uint fvf )
 
 	if ( vb != 0 )
 	{
-		return new VertexBuffer( vb, triangelCount, stride, fvf );
+		return new VertexBuffer( vb, triangleCount, stride, fvf );
 	}
 
-	return (VertexBuffer8)0;
+	return (VertexBuffer*)0;
 }
 
 IndexBuffer* 
 Renderer::CreateIndexBuffer( uint faceCount )
 {
-	IDirect3DIndexBuffer* ib; 
+	IDirect3DIndexBuffer9* ib; 
 
 	m_device->CreateIndexBuffer( faceCount*3*2, 
 		                         D3DUSAGE_WRITEONLY, 
@@ -121,7 +121,7 @@ Renderer::CreateIndexBuffer( uint faceCount )
 Effect*	
 Renderer::CreateEffect( const std::string& file )
 {
-	LPD3DXEFFECT* effect = 0;
+	ID3DXEffect* effect = 0;
 
 	if ( SUCCEEDED( D3DXCreateEffectFromFile( 
 						m_device, 
@@ -139,7 +139,7 @@ Renderer::CreateEffect( const std::string& file )
 	return (Effect*)0;
 }
 
-Textuer* 		
+Texture* 		
 Renderer::CreateTexture( const std::string& file )
 {
 	LPDIRECT3DTEXTURE9 tex; 
@@ -171,7 +171,8 @@ bool Renderer::createDevice()
     d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
 
     if( FAILED( m_direct3d->CreateDevice( D3DADAPTER_DEFAULT, 
-										  D3DDEVTYPE_HAL, hWnd,
+										  D3DDEVTYPE_HAL, 
+										  m_params.hwnd,
                                       	  D3DCREATE_HARDWARE_VERTEXPROCESSING,
                                       	  &d3dpp, 
 										  &m_device) ) )
@@ -196,6 +197,6 @@ void Renderer::releaseDevice()
 	if ( m_device != 0 )
 	{
 		m_device->Release();
-		m_deivce = 0;
+		m_device = 0;
 	}
 }

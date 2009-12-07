@@ -1,5 +1,7 @@
 #pragma once 
 
+#include "Drawable.h"
+
 namespace gfx {
 
 class Renderer;

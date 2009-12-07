@@ -2,8 +2,6 @@
 
 #include "IndexBuffer.h"
 
-#include "Renderer.h"
-
 using namespace gfx; 
 
 IndexBuffer::IndexBuffer( IDirect3DIndexBuffer9* ib, uint faceCount )
@@ -25,7 +23,7 @@ IndexBuffer::~IndexBuffer()
 bool IndexBuffer::Update( byte* v, uint faceCount )
 {
 	K_ASSERT( v != 0 );
-	K_ASSERT( faceCount <= m_faceCont );
+	K_ASSERT( faceCount == m_faceCont );
 	K_ASSERT( m_ib != 0 );
 
 	void* pindices = 0;
@@ -35,6 +33,8 @@ bool IndexBuffer::Update( byte* v, uint faceCount )
 	memcpy( (byte*)pindices, v, faceCount * 3 * 2 );  // use short index	
 
 	m_ib->Unlock();
+
+	return true;
 }
 
 

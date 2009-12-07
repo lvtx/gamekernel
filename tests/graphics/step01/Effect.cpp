@@ -2,7 +2,9 @@
 
 #include "Effect.h"
 
-Effect::Effect( ID3DXEFFECT* effect )
+using namespace gfx;
+
+Effect::Effect( ID3DXEffect* effect )
 : m_effect( effect )
 {
 	K_ASSERT( m_effect != 0 );
@@ -23,7 +25,7 @@ bool Effect::SetMatrix( const std::string& name, D3DXMATRIXA16* matrix )
 
 bool Effect::SetTexture( const std::string& name, Texture* tex )
 {
-	return SUCCEEDED( m_effect->SetMatrix( name.c_str(), matrix ) );
+	return SUCCEEDED( m_effect->SetTexture( name.c_str(), tex->GetTex() ) );
 }
 
 bool Effect::SetValue( const std::string& name, void* v, uint size )
@@ -34,9 +36,14 @@ bool Effect::SetValue( const std::string& name, void* v, uint size )
 	return SUCCEEDED( m_effect->SetValue( name.c_str(), v, size ) ); 
 }
 
+bool Effect::SetTechnique( const std::string& tech )
+{
+	return SUCCEEDED( m_effect->SetTechnique( tech.c_str() ) );
+}
+
 bool Effect::Begin( uint& passes )
 {
-	return SUCCEEDED( m_effect->Begin(passes, 0) );
+	return SUCCEEDED( m_effect->Begin(&passes, 0) );
 }
 
 bool Effect::BeginPass( uint pass )

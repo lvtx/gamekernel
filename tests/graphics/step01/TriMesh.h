@@ -1,11 +1,13 @@
 #pragma once 
 
-namespace gk {
+#include <d3d9.h>
+
+namespace gfx {
 
 struct Uv { 
 	float u; 
 	float v;
-}
+};
 
 /**
  * @struct TriMesh 
@@ -14,8 +16,8 @@ struct Uv {
  */
 struct TriMesh 
 {
-	static uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1;
-	static uint STRIDE = sizeof( TriMesh );
+	static const uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1;
+	static const uint STRIDE = 36;
 
 	float	x, y, z; 	// vertex pos
 	int		color;		// vertex color
@@ -30,8 +32,8 @@ struct TriMesh
  */
 struct TriSkinMesh 
 {
-	static uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1;
-	static uint STRIDE = sizeof( TriSkinMesh );
+	static const uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1;
+	static const uint STRIDE = 68;
 
 	float x, y, z; 		// vertex pos
 	int   color;		// vertex color
@@ -48,8 +50,8 @@ struct TriSkinMesh
  */
 struct TriBumpSkinMesh 
 {
-	static uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1 | D3DFVF_TEX2 | D3DFVF_TEX3;
-	static uint STRIDE = sizeof( TriBumpSkinMesh );
+	static const uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1 | D3DFVF_TEX2 | D3DFVF_TEX3;
+	static const uint STRIDE = 84;
 
 	float	x, y, z;	// vertex pos
 	int		color;		// vertex color
@@ -59,4 +61,4 @@ struct TriBumpSkinMesh
 	int		b[4];		// bone indices
 };
 
-} // namespace mgl
+} // namespace gfx

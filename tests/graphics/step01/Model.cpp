@@ -16,14 +16,10 @@ Model::~Model()
 
 bool Model::Load( Renderer* renderer, const std::string& file )
 {
+	renderer;
 	file;
 
 	return false; 
-}
-
-void Model::Update( float tick )
-{
-	tick;
 }
 
 void Model::Unload()

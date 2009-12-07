@@ -1,13 +1,14 @@
 #pragma once 
 
 #include <d3d9.h>
-#include <d3dx9effect.h>
+#include <d3dx9.h>
 #include <string>
+
+#include "Texture.h"
 
 namespace gfx
 {
-class Renderer;
-class Model; 
+class Texture;
 
 /**
  * @class Effect
@@ -17,13 +18,14 @@ class Model;
 class Effect 
 {
 public:
-	Effect( ID3DXEFFECT* effect );
+	Effect( ID3DXEffect* effect );
 	~Effect();
-
+	
 	bool SetMatrix( const std::string& name, D3DXMATRIXA16* matrix );
 	bool SetTexture( const std::string& name, Texture* tex );
 	bool SetValue( const std::string& name, void* v, uint size );
 
+	bool SetTechnique( const std::string& tech );
 	bool Begin( uint& passes ); 
 	bool BeginPass( uint pass );
 	bool EndPass();
@@ -33,7 +35,7 @@ public:
 	void OnRestored();
 
 private:
-	ID3DXEFFECT* 	m_effect;
+	ID3DXEffect* 	m_effect;
 };
 
 } // namespace gfx

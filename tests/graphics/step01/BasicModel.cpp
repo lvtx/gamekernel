@@ -5,6 +5,7 @@
 #include "Effect.h"
 #include "Renderer.h"
 #include "Texture.h"
+
 #include <kcore/xml/tinyxml.h>
 
 using namespace gfx;
@@ -39,7 +40,7 @@ void BasicModel::Draw( Renderer* renderer )
 	
 	uint passes = 0;
 
-	m_effect->Begin( &passes );
+	m_effect->Begin( passes );
 
 	for ( uint i=0; i<passes; ++i )
 	{
@@ -48,7 +49,7 @@ void BasicModel::Draw( Renderer* renderer )
 		renderer->SetStreamSource( m_vbuf );
 		renderer->SetIndices( m_ibuf );
 
-		renderer->DrawIndexedPrimitive( 0, 
+		renderer->DrawIndexed( 0, 
 										0, 
 										m_vbuf->GetTriangleCount(), 
 										0, 
@@ -93,7 +94,7 @@ void BasicModel::Unload()
 
 bool BasicModel::loadText( const std::string& file )
 {
-	XmlDocument doc; 
+	TiXmlDocument doc; 
 
 	bool rc = doc.LoadFile( file.c_str() );
 	if ( !rc ) return false; 
@@ -114,7 +115,7 @@ bool BasicModel::createTexture( Renderer* renderer )
 {
 	m_texture = renderer->CreateTexture( m_tex0 );
 
-	return ( m_texure != 0 );
+	return ( m_texture != 0 );
 }
 
 bool BasicModel::createVertexBuffer( Renderer* renderer )
@@ -125,12 +126,14 @@ bool BasicModel::createVertexBuffer( Renderer* renderer )
 										   TriMesh::STRIDE, 
 										   TriMesh::FVF );
 
-	if ( m_vbuf != 0 )
+	if ( m_vbuf == 0 ) 
 	{
-		m_vbuf->Update( &m_tries[0], m_tries.size(), TriMesh::STRIDE );
+		return false; 
 	}
 
-	return ( m_vbuf != 0 );
+	m_vbuf->Update( (byte*)(&m_tries[0]), m_tries.size(), TriMesh::STRIDE );
+
+	return true;
 }
 
 bool BasicModel::createIndexBuffer( Renderer* renderer )
@@ -139,27 +142,29 @@ bool BasicModel::createIndexBuffer( Renderer* renderer )
 
 	m_ibuf = renderer->CreateIndexBuffer( m_faces.size() );
 
-	if ( m_vbuf != 0 )
+	if ( m_vbuf == 0 )
 	{
-		m_ibuf->Update( &m_faces[0], m_faces.size() ); 
+		return false;
 	}
 
-	return ( m_ibuf != 0 );
+	m_ibuf->Update( (byte*)(&m_faces[0]), m_faces.size() ); 
+
+	return true;
 }
 
 bool BasicModel::loadModel( TiXmlElement* xmodel )
 {
 	if ( xmodel == 0 ) return false; 
 
-	const char* xtype = xmodel->Atrribute( "type" );
+	const char* xtype = xmodel->Attribute( "type" );
 	if ( xtype == 0 ) return false; 
 	if ( strcmp( xtype, "basic" ) != 0 ) return false;
 
-	xshader = xmodel->FirstChildElement( "shader" );
+	TiXmlElement* xshader = xmodel->FirstChildElement( "shader" );
 	K_RETURN_V_IF_NOT( xshader != 0, false );
 	K_RETURN_V_IF_NOT( loadShader( xshader ), false );
 
-	xtexture = xmodel->FirstChildElement( "tex0" );
+	TiXmlElement* xtexture = xmodel->FirstChildElement( "tex0" );
 	K_RETURN_V_IF_NOT( xtexture != 0, false );
 	K_RETURN_V_IF_NOT( loadTex( xtexture ), false );
 
@@ -187,14 +192,39 @@ bool BasicModel::loadModel( TiXmlElement* xmodel )
 void BasicModel::loadVertex( TiXmlElement* xv )
 {
 	// <v x="1" y="2" z="3" c="31341341" nx="0.1" ny="0.1" nz="0.1 tx="0.0" ty="0.0""/>
+	TriMesh m;
+	memset( (void*)&m, 0, sizeof(TriMesh) );
 
+	xv->Attribute( "x", (double*)&m.x );
+	xv->Attribute( "y", (double*)&m.y );
+	xv->Attribute( "z", (double*)&m.z );
+
+	xv->Attribute( "c", (double*)&m.color );
+
+	xv->Attribute( "nx", (double*)&m.nx );
+	xv->Attribute( "ny", (double*)&m.ny );
+	xv->Attribute( "nz", (double*)&m.nz );
+
+	xv->Attribute( "tx", (double*)&m.tex1.u );
+	xv->Attribute( "ty", (double*)&m.tex1.v );
+
+	m_tries.push_back( m );
 }
 
 void BasicModel::loadFace( TiXmlElement* xf )
 {
 	// <f x="1" y="1" z="1"/>
+	
+	short x = 0;
+	short y = 0;
+	short z = 0; 
 
+	xf->Attribute( "x", (double*)&x );	
+	xf->Attribute( "y", (double*)&y );	
+	xf->Attribute( "z", (double*)&z );	
+
+	m_faces.push_back( x );
+	m_faces.push_back( y );
+	m_faces.push_back( z );
 }
-
-
 

@@ -2,13 +2,19 @@
 
 #include "TriMesh.h"
 #include "Model.h"
+#include "VertexBuffer.h"
+#include "IndexBuffer.h"
+
+#include <string>
+#include <vector>
+
+class TiXmlElement;
 
 namespace gfx {
 
 class Effect; 
 class Renderer;
 class Texture; 
-class TiXmlElement;
 
 /**
  * @class BasicModel 
@@ -47,6 +53,8 @@ protected:
 	bool createIndexBuffer( Renderer* renderer );
 
 	bool loadModel( TiXmlElement* xmodel );
+	void loadVertex( TiXmlElement* xv );
+	void loadFace( TiXmlElement* xf );
 
 protected:
 	std::string 		m_tex0;	 	// the first and only texture

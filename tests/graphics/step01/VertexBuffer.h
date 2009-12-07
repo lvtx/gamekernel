@@ -1,8 +1,8 @@
 #pragma once 
 
-namespace gfx {
+#include <d3d9.h>
 
-class Renderer;
+namespace gfx {
 
 /**
  * @class VertexBuffer

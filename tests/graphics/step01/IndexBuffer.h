@@ -4,8 +4,6 @@
 
 namespace gfx {
 
-class Renderer; 
-
 /**
  * @class IndexBuffer
  */

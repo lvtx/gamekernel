@@ -16,5 +16,7 @@ void Drawable::Draw( Renderer* renderer )
 {
 	K_ASSERT( renderer != 0 );
 
+	renderer;
+
 	// empty
 }
