@@ -28,5 +28,5 @@ typedef __int64    int8;
 #endif
 
 // use result instead of bool or int code 
-#include <lax/kcore/base/Result.h>
+#include <kcore/base/Result.h>
 

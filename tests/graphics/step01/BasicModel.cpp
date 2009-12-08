@@ -161,14 +161,17 @@ bool BasicModel::loadModel( TiXmlElement* xmodel )
 	if ( strcmp( xtype, "basic" ) != 0 ) return false;
 
 	TiXmlElement* xshader = xmodel->FirstChildElement( "shader" );
-	K_RETURN_V_IF_NOT( xshader != 0, false );
-	K_RETURN_V_IF_NOT( loadShader( xshader ), false );
+	K_RETURN_V_IF( xshader == 0, false );
+	K_RETURN_V_IF( loadShader( xshader ) == false, false );
 
 	TiXmlElement* xtexture = xmodel->FirstChildElement( "tex0" );
-	K_RETURN_V_IF_NOT( xtexture != 0, false );
-	K_RETURN_V_IF_NOT( loadTex( xtexture ), false );
+	K_RETURN_V_IF( xtexture == 0, false );
+	K_RETURN_V_IF( loadTexture( xtexture ) == false, false );
 
-	TiXmlElement* xv = xmodel->FirstChildElement( "v" );
+	TiXmlElement* xvertices = xmodel->FirstChildElement( "vertices" );
+	K_RETURN_V_IF( xvertices == 0, false );
+
+	TiXmlElement* xv = xvertices->FirstChildElement( "v" );
 
 	while ( xv != 0 )
 	{
@@ -187,6 +190,26 @@ bool BasicModel::loadModel( TiXmlElement* xmodel )
 	}
 
 	return !m_tries.empty() && !m_faces.empty();
+}
+
+bool BasicModel::loadShader( TiXmlElement* xshader )
+{
+	const char* ashader = xshader->Attribute( "path" );
+	K_RETURN_V_IF( ashader == 0, false );
+
+	m_shader = ashader;	
+
+	return true;
+}
+
+bool BasicModel::loadTexture( TiXmlElement* xtexture )
+{
+	const char* atex = xtexture->Attribute( "path" );
+	K_RETURN_V_IF( atex == 0, false );
+
+	m_tex0 = atex;
+
+	return true;
 }
 
 void BasicModel::loadVertex( TiXmlElement* xv )
@@ -217,11 +240,11 @@ void BasicModel::loadFace( TiXmlElement* xf )
 	
 	short x = 0;
 	short y = 0;
-	short z = 0; 
+	short z = 0;
 
-	xf->Attribute( "x", (double*)&x );	
-	xf->Attribute( "y", (double*)&y );	
-	xf->Attribute( "z", (double*)&z );	
+	xf->Attribute( "x", (double*)&x );
+	xf->Attribute( "y", (double*)&y );
+	xf->Attribute( "z", (double*)&z );
 
 	m_faces.push_back( x );
 	m_faces.push_back( y );

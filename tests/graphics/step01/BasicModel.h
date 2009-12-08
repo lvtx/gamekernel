@@ -53,6 +53,8 @@ protected:
 	bool createIndexBuffer( Renderer* renderer );
 
 	bool loadModel( TiXmlElement* xmodel );
+	bool loadShader( TiXmlElement* xshader );
+	bool loadTexture( TiXmlElement* xtexture );
 	void loadVertex( TiXmlElement* xv );
 	void loadFace( TiXmlElement* xf );
 

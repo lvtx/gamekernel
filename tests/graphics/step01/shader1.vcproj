@@ -62,6 +62,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="d3d9.lib d3dx9.lib"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -136,6 +137,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="d3d9.lib d3dx9.lib"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -350,6 +352,30 @@
 			</File>
 			<File
 				RelativePath="..\..\..\kcore\base\Result.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\kcore\xml\tinystr.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\kcore\xml\tinystr.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\kcore\xml\tinyxml.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\kcore\xml\tinyxml.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\kcore\xml\tinyxmlerror.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\kcore\xml\tinyxmlparser.cpp"
 				>
 			</File>
 			<File

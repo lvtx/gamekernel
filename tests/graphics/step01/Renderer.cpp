@@ -129,6 +129,7 @@ Renderer::CreateEffect( const std::string& file )
 						0, 
 						0, 
 						0, 
+						0, 
 						&effect, 
 						0
 					) ) )

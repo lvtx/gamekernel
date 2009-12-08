@@ -4,6 +4,9 @@
 #include "stdafx.h"
 #include "shader1.h"
 
+#include "Renderer.h"
+#include "BasicModel.h"
+
 #define MAX_LOADSTRING 100
 
 // Global Variables:
@@ -16,6 +19,8 @@ ATOM				MyRegisterClass(HINSTANCE hInstance);
 BOOL				InitInstance(HINSTANCE, int);
 LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
+
+using namespace gfx; 
 
 Renderer::Params gParams; 
 
@@ -44,30 +49,30 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 	hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_SHADER1));
 
-	BasicModel model; 
-
-	model.Load( "test.bmt" );
-
 	Renderer renderer;
 
-	renderer.Init( params );
+	BasicModel model; 
+
+	model.Load( &renderer, "test.bmt" );
+
+	renderer.Init( gParams );
 
 	PeekMessage( &msg, NULL, 0, 0, PM_NOREMOVE);
 
 	// run till completed
 
-	while (mssg.message!=WM_QUIT) {
+	while (msg.message!=WM_QUIT) {
 
 		// is there a message to process?
 
-		if (PeekMessage( &mssg, NULL, 0, 0, PM_REMOVE)) {
-			TranslateMessage(&mssg);
-			DispatchMessage(&mssg);
+		if (PeekMessage( &msg, NULL, 0, 0, PM_REMOVE)) {
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
 
 		} else {
-			renderer.BeginSence();
+			renderer.BeginScene();
             model.Draw( &renderer );
-			renderer.EndSecenet();
+			renderer.EndScene();
 		}
 	}
 	

@@ -13,7 +13,10 @@ if ( p != 0 ) \
 	p = 0; \
 }
 
-/*
- * To provide a better or custom assert, write nassert function.
- * kcore/base/Assert.cpp has a real simple example.
- */
+#define K_RETURN_IF( cond ) \
+	if ( (cond) ) return;
+
+#define K_RETURN_V_IF( cond, val ) \
+	if ( (cond) ) return (val);
+
+
