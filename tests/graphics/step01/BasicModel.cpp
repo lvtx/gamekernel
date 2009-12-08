@@ -11,6 +11,14 @@
 using namespace gfx;
 
 BasicModel::BasicModel()
+: m_tex0()
+, m_shader()
+, m_tries()
+, m_faces()
+, m_effect( 0 )
+, m_texture( 0 )
+, m_vbuf( 0 )
+, m_ibuf( 0 )
 {
 	m_type = Model::MODEL_BASIC;
 }
@@ -50,10 +58,10 @@ void BasicModel::Draw( Renderer* renderer )
 		renderer->SetIndices( m_ibuf );
 
 		renderer->DrawIndexed( 0, 
-										0, 
-										m_vbuf->GetTriangleCount(), 
-										0, 
-										m_ibuf->GetFaceCount() );
+  							   0, 
+							   m_vbuf->GetTriangleCount(), 
+							   0, 
+							   m_ibuf->GetFaceCount() );
 
 		m_effect->EndPass();
 	}
@@ -164,7 +172,7 @@ bool BasicModel::loadModel( TiXmlElement* xmodel )
 	K_RETURN_V_IF( xshader == 0, false );
 	K_RETURN_V_IF( loadShader( xshader ) == false, false );
 
-	TiXmlElement* xtexture = xmodel->FirstChildElement( "tex0" );
+	TiXmlElement* xtexture = xmodel->FirstChildElement( "texture" );
 	K_RETURN_V_IF( xtexture == 0, false );
 	K_RETURN_V_IF( loadTexture( xtexture ) == false, false );
 
@@ -215,21 +223,22 @@ bool BasicModel::loadTexture( TiXmlElement* xtexture )
 void BasicModel::loadVertex( TiXmlElement* xv )
 {
 	// <v x="1" y="2" z="3" c="31341341" nx="0.1" ny="0.1" nz="0.1 tx="0.0" ty="0.0""/>
+
 	TriMesh m;
 	memset( (void*)&m, 0, sizeof(TriMesh) );
 
-	xv->Attribute( "x", (double*)&m.x );
-	xv->Attribute( "y", (double*)&m.y );
-	xv->Attribute( "z", (double*)&m.z );
+	attrFloat( xv, "x", m.x );
+	attrFloat( xv, "y", m.y );
+	attrFloat( xv, "z", m.z );
 
-	xv->Attribute( "c", (double*)&m.color );
+	xv->Attribute( "c", &m.color );
 
-	xv->Attribute( "nx", (double*)&m.nx );
-	xv->Attribute( "ny", (double*)&m.ny );
-	xv->Attribute( "nz", (double*)&m.nz );
+	attrFloat( xv, "nx", m.nx );
+	attrFloat( xv, "ny", m.ny );
+	attrFloat( xv, "nz", m.nz );
 
-	xv->Attribute( "tx", (double*)&m.tex1.u );
-	xv->Attribute( "ty", (double*)&m.tex1.v );
+	attrFloat( xv, "tx", m.tex1.u );
+	attrFloat( xv, "ty", m.tex1.v );
 
 	m_tries.push_back( m );
 }
@@ -242,12 +251,40 @@ void BasicModel::loadFace( TiXmlElement* xf )
 	short y = 0;
 	short z = 0;
 
-	xf->Attribute( "x", (double*)&x );
-	xf->Attribute( "y", (double*)&y );
-	xf->Attribute( "z", (double*)&z );
+	attrShort( xf, "x", x );
+	attrShort( xf, "y", y );
+	attrShort( xf, "z", z );
 
 	m_faces.push_back( x );
 	m_faces.push_back( y );
 	m_faces.push_back( z );
 }
 
+
+void BasicModel::attrFloat( TiXmlElement* xe, const char* name, float& d )
+{
+	const char* s = xe->Attribute( name );
+
+	if ( s ) 
+	{
+		d = (float)atof( s );
+	}
+	else 
+	{
+		d = 0;
+	}
+}
+
+void BasicModel::attrShort( TiXmlElement* xe, const char* name, short& v )
+{
+	const char* s = xe->Attribute( name );
+
+	if ( s ) 
+	{
+		v = (short)atoi( s );
+	}
+	else 
+	{
+		v = 0;
+	}
+}

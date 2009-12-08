@@ -53,7 +53,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 	BasicModel model; 
 
-	model.Load( &renderer, "test.bmt" );
+	model.Load( &renderer, "testmodel.xml" );
 
 	renderer.Init( gParams );
 
@@ -61,24 +61,24 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 	// run till completed
 
-	while (msg.message!=WM_QUIT) {
-
-		// is there a message to process?
-
-		if (PeekMessage( &msg, NULL, 0, 0, PM_REMOVE)) {
+	while (msg.message != WM_QUIT) 
+	{
+		if (PeekMessage( &msg, NULL, 0, 0, PM_REMOVE)) 
+		{
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
-
-		} else {
+		} 
+		else 
+		{
 			renderer.BeginScene();
             model.Draw( &renderer );
 			renderer.EndScene();
 		}
-	}
+	}	
 	
-	renderer.Fini();
-
 	model.Unload();
+
+	renderer.Fini();
 
 	return (int) msg.wParam;
 }

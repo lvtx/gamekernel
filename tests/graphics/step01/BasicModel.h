@@ -58,6 +58,9 @@ protected:
 	void loadVertex( TiXmlElement* xv );
 	void loadFace( TiXmlElement* xf );
 
+	void attrFloat( TiXmlElement* xe, const char* name, float& v );
+	void attrShort( TiXmlElement* xe, const char* name, short& v );
+
 protected:
 	std::string 		m_tex0;	 	// the first and only texture
 	std::string 		m_shader;	// shader path for this model
