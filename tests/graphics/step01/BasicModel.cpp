@@ -39,8 +39,26 @@ void BasicModel::Draw( Renderer* renderer )
 
 	if ( m_texture != 0 )
 	{
-		m_effect->SetTexture( "diffuse0", m_texture );
+		m_effect->SetTexture( "tex0", m_texture );
 	}
+
+	// Test : Setup matrixes
+
+	D3DXMATRIX  m_matWorld;
+	D3DXMATRIX  m_matView;
+	D3DXMATRIX  m_matProj;
+
+	D3DXVECTOR3 vUpVec(0,1,0);
+	D3DXVECTOR3 vEyePt(0,0,-10.0f);
+	D3DXVECTOR3 vLookatPt(0,0,100);
+	D3DXMatrixLookAtLH(&m_matView, &vEyePt, &vLookatPt, &vUpVec);
+
+
+	D3DXMatrixPerspectiveFovLH(&m_matProj, 0.05f, 1024/768, 5.0f, 500.0f);
+
+	m_effect->SetMatrix( "World",		&m_matWorld);
+	m_effect->SetMatrix( "View",		&m_matView);
+	m_effect->SetMatrix( "Projection",  &m_matProj);
 
 	m_effect->SetTechnique( "t0" );
 
@@ -188,7 +206,10 @@ bool BasicModel::loadModel( TiXmlElement* xmodel )
 		xv = xv->NextSiblingElement( "v" );
 	}
 
-	TiXmlElement* xf = xmodel->FirstChildElement( "f" );
+	TiXmlElement* xfaces = xmodel->FirstChildElement( "faces" );
+	K_RETURN_V_IF( xfaces == 0, false );
+
+	TiXmlElement* xf = xfaces->FirstChildElement( "f" );
 
 	while ( xf != 0 )
 	{
@@ -229,9 +250,7 @@ void BasicModel::loadVertex( TiXmlElement* xv )
 
 	attrFloat( xv, "x", m.x );
 	attrFloat( xv, "y", m.y );
-	attrFloat( xv, "z", m.z );
-
-	xv->Attribute( "c", &m.color );
+	attrFloat( xv, "z", m.z );	
 
 	attrFloat( xv, "nx", m.nx );
 	attrFloat( xv, "ny", m.ny );

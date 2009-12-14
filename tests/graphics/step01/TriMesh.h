@@ -16,11 +16,10 @@ struct Uv {
  */
 struct TriMesh 
 {
-	static const uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1;
-	static const uint STRIDE = 36;
+	static const uint FVF = D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1;
+	static const uint STRIDE = 32;
 
 	float	x, y, z; 	// vertex pos
-	int		color;		// vertex color
 	float	nx, ny, nz; // vertex normal
 	Uv		tex1; 		// tex coords
 };
@@ -32,11 +31,10 @@ struct TriMesh
  */
 struct TriSkinMesh 
 {
-	static const uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1;
-	static const uint STRIDE = 68;
+	static const uint FVF = D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1;
+	static const uint STRIDE = 64;
 
 	float x, y, z; 		// vertex pos
-	int   color;		// vertex color
 	float nx, ny, nz; 	// vertex normal
 	Uv	  tex1; 		// tex coords
 	float w[4]; 		// weights up to 4 bones
@@ -50,11 +48,10 @@ struct TriSkinMesh
  */
 struct TriBumpSkinMesh 
 {
-	static const uint FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_NORMAL | D3DFVF_TEX1 | D3DFVF_TEX2 | D3DFVF_TEX3;
-	static const uint STRIDE = 84;
+	static const uint FVF = D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1 | D3DFVF_TEX2 | D3DFVF_TEX3;
+	static const uint STRIDE = 80;
 
 	float	x, y, z;	// vertex pos
-	int		color;		// vertex color
 	float	nx, ny, nz; // vertex normal
 	Uv		tex[3]; 	// up to 4 textures (diffuse, normal, bump)
 	float	w[4]; 		// weights up to 4 bones

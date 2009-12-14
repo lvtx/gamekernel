@@ -2,27 +2,13 @@
 	<shader path="D:\personal\code\gamekernel\tests\graphics\step01\simple.fx"/>
 	<texture path="D:\personal\code\gamekernel\tests\graphics\step01\winter.jpg"/>
 	<vertices> 
-		<v x="1" y="2" z="3" c="0" nx="0.1" ny="0.1" nz="0.1" tx="0.0" ty="0.0"/>
-		<v x="1" y="2" z="3" c="0" nx="0.1" ny="0.1" nz="0.1" tx="0.0" ty="0.0"/>
-		<v x="1" y="2" z="3" c="0" nx="0.1" ny="0.1" nz="0.1" tx="0.0" ty="0.0"/>
-		<v x="1" y="2" z="3" c="0" nx="0.1" ny="0.1" nz="0.1" tx="0.0" ty="0.0"/>
-		<v x="1" y="2" z="3" c="0" nx="0.1" ny="0.1" nz="0.1" tx="0.0" ty="0.0"/>
-		<v x="1" y="2" z="3" c="0" nx="0.1" ny="0.1" nz="0.1" tx="0.0" ty="0.0"/>
-		<v x="1" y="2" z="3" c="0" nx="0.1" ny="0.1" nz="0.1" tx="0.0" ty="0.0"/>
-		<v x="1" y="2" z="3" c="0" nx="0.1" ny="0.1" nz="0.1" tx="0.0" ty="0.0"/>
+		<v x="0" y="0" z="0" c="0" nx="0.1" ny="0.1" nz="0.1" tx="0.0" ty="1.0"/>
+		<v x="1" y="0" z="0" c="0" nx="0.1" ny="0.1" nz="0.1" tx="1.0" ty="1.0"/>
+		<v x="1" y="1" z="0" c="0" nx="0.1" ny="0.1" nz="0.1" tx="1.0" ty="0.0"/>		
+		<v x="0" y="1" z="0" c="0" nx="0.1" ny="0.1" nz="0.1" tx="0.0" ty="0.0"/>		
 	</vertices>
 	<faces>
-		<f x="1" y="1" z="1"/>
-		<f x="1" y="1" z="1"/>
-		<f x="1" y="1" z="1"/>
-		<f x="1" y="1" z="1"/>
-		<f x="1" y="1" z="1"/>
-		<f x="1" y="1" z="1"/>
-		<f x="1" y="1" z="1"/>
-		<f x="1" y="1" z="1"/>
-		<f x="1" y="1" z="1"/>
-		<f x="1" y="1" z="1"/>
-		<f x="1" y="1" z="1"/>
-		<f x="1" y="1" z="1"/>
+		<f x="0" y="1" z="2"/>
+		<f x="0" y="2" z="3"/>		
 	</faces>
 </model>

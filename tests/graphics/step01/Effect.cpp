@@ -18,7 +18,7 @@ Effect::~Effect()
 	}
 }
 
-bool Effect::SetMatrix( const std::string& name, D3DXMATRIXA16* matrix )
+bool Effect::SetMatrix( const std::string& name, D3DXMATRIX* matrix )
 {
 	return SUCCEEDED( m_effect->SetMatrix( name.c_str(), matrix ) );
 }

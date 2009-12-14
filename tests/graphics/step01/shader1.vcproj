@@ -295,6 +295,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\simple.fx"
+				>
+			</File>
+			<File
 				RelativePath=".\SkinModel.cpp"
 				>
 			</File>

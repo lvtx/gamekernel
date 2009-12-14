@@ -21,7 +21,7 @@ public:
 	Effect( ID3DXEffect* effect );
 	~Effect();
 	
-	bool SetMatrix( const std::string& name, D3DXMATRIXA16* matrix );
+	bool SetMatrix( const std::string& name, D3DXMATRIX* matrix );
 	bool SetTexture( const std::string& name, Texture* tex );
 	bool SetValue( const std::string& name, void* v, uint size );
 
