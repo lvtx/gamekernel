@@ -50,12 +50,10 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_SHADER1));
 
 	Renderer renderer;
+	renderer.Init( gParams );
 
 	BasicModel model; 
-
 	model.Load( &renderer, "testmodel.xml" );
-
-	renderer.Init( gParams );
 
 	PeekMessage( &msg, NULL, 0, 0, PM_NOREMOVE);
 

@@ -122,6 +122,7 @@ Effect*
 Renderer::CreateEffect( const std::string& file )
 {
 	ID3DXEffect* effect = 0;
+	LPD3DXBUFFER error = 0;
 
 	if ( SUCCEEDED( D3DXCreateEffectFromFile( 
 						m_device, 
@@ -131,11 +132,13 @@ Renderer::CreateEffect( const std::string& file )
 						0, 
 						0, 
 						&effect, 
-						0
+						&error
 					) ) )
 	{
 		return new Effect( effect );
 	}
+
+	MessageBoxA( NULL, (LPCSTR)error->GetBufferPointer(), "Error", MB_OK );
 
 	return (Effect*)0;
 }

@@ -28,7 +28,7 @@ bool IndexBuffer::Update( byte* v, uint faceCount )
 
 	void* pindices = 0;
 
-	m_ib->Lock( 0, 0, (void**)pindices, 0 );
+	m_ib->Lock( 0, 0, (void**)&pindices, 0 );
 
 	memcpy( (byte*)pindices, v, faceCount * 3 * 2 );  // use short index	
 

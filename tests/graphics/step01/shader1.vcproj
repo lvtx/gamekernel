@@ -307,6 +307,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\testmodel.xml"
+				>
+			</File>
+			<File
 				RelativePath=".\Texture.cpp"
 				>
 			</File>
@@ -344,6 +348,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\kcore\base\Macros.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\GB\CoreLibs\NiFloodgate\NiSPWorkflow.h"
 				>
 			</File>
 			<File
