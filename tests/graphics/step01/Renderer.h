@@ -65,6 +65,9 @@ public:
 	/// Clean up device
 	void Fini();
 
+	/// Get Direct3D error and log 
+	void LogError( HRESULT rc ); 
+
 	int GetError() const;
 
 	VertexBuffer* 	CreateVertexBuffer( uint triangleCount, uint stride, uint fvf );

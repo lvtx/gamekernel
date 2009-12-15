@@ -48,6 +48,9 @@ void BasicModel::Draw( Renderer* renderer )
 	D3DXMATRIX  m_matView;
 	D3DXMATRIX  m_matProj;
 
+	D3DXMatrixIdentity( &m_matWorld );
+	D3DXMatrixIdentity( &m_matView );
+
 	D3DXVECTOR3 vUpVec(0,1,0);
 	D3DXVECTOR3 vEyePt(0,0,-10.0f);
 	D3DXVECTOR3 vLookatPt(0,0,100);
@@ -62,6 +65,10 @@ void BasicModel::Draw( Renderer* renderer )
 
 	m_effect->SetTechnique( "t0" );
 
+	renderer->SetFvf( TriMesh::FVF );
+	renderer->SetStreamSource( m_vbuf );
+	renderer->SetIndices( m_ibuf );
+
 	// TODO: draw meshes grouped in effects
 	
 	uint passes = 0;
@@ -71,10 +78,6 @@ void BasicModel::Draw( Renderer* renderer )
 	for ( uint i=0; i<passes; ++i )
 	{
 		m_effect->BeginPass( i );
-
-		renderer->SetFvf( TriMesh::FVF );
-		renderer->SetStreamSource( m_vbuf );
-		renderer->SetIndices( m_ibuf );
 
 		renderer->DrawIndexed( 0, 
   							   0, 

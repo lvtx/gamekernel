@@ -9,9 +9,9 @@ texture tex0;
 sampler DiffSampler = sampler_state
 {
     Texture     = <tex0>;
-    MinFilter   = None;
-    MagFilter   = None;
-    MipFilter   = None;
+    MinFilter   = LINEAR;
+    MagFilter   = LINEAR;
+    MipFilter   = LINEAR;
 };
 
 technique t0

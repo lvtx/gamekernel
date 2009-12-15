@@ -2,6 +2,8 @@
 
 #include "Renderer.h"
 
+#include <dxerr.h>
+
 using namespace gfx;
 
 Renderer::Renderer()
@@ -41,7 +43,12 @@ void Renderer::SetStreamSource( VertexBuffer* vbuf )
 {
 	K_ASSERT( vbuf != 0 );
 
-	m_device->SetStreamSource( 0, vbuf->GetBuffer(), 0, vbuf->GetStride() );
+	HRESULT rc = m_device->SetStreamSource( 0, vbuf->GetBuffer(), 0, vbuf->GetStride() );
+
+	if ( FAILED( rc ) )
+	{
+		LogError( rc );
+	}
 }
 
 void Renderer::SetFvf( int fvf )
@@ -53,7 +60,12 @@ void Renderer::SetIndices( IndexBuffer* ibuf )
 {
 	K_ASSERT( ibuf != 0 );
 
-	m_device->SetIndices( ibuf->GetBuffer() );
+	HRESULT rc = m_device->SetIndices( ibuf->GetBuffer() );
+
+	if ( FAILED( rc ) )
+	{
+		LogError( rc );
+	}
 }
 
 void Renderer::DrawIndexed( int bi, uint mi, uint nv, uint si, uint pc )
@@ -81,6 +93,19 @@ void Renderer::Fini()
 {
 	releaseDevice();
 	releaseDirect3d();
+}
+
+void Renderer::LogError( HRESULT hr )
+{
+	char buf[2048];
+	
+#pragma warning( disable : 4996 )
+	sprintf(buf, 
+		    "Error: %s error description: %s\n",
+		    DXGetErrorString(hr),
+			DXGetErrorDescription(hr));
+
+	OutputDebugString(buf);
 }
 
 VertexBuffer* 
@@ -178,9 +203,13 @@ bool Renderer::createDevice()
 {
     D3DPRESENT_PARAMETERS d3dpp;
     ZeroMemory( &d3dpp, sizeof( d3dpp ) );
-    d3dpp.Windowed = TRUE;
-    d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
-    d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
+
+    d3dpp.Windowed			= TRUE;
+    d3dpp.SwapEffect		= D3DSWAPEFFECT_DISCARD;
+    d3dpp.BackBufferFormat	= D3DFMT_X8R8G8B8;		// set the back buffer format to 32-bit. TODO: Get desktop bpp 
+    d3dpp.BackBufferWidth	= m_params.w;			// set the width of the buffer
+    d3dpp.BackBufferHeight	= m_params.h;			// set the height of the buffer
+	d3dpp.BackBufferCount	= 1;
 
     if( FAILED( m_direct3d->CreateDevice( D3DADAPTER_DEFAULT, 
 										  D3DDEVTYPE_HAL, 

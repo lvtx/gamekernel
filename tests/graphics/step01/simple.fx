@@ -43,9 +43,9 @@ VS_OUTPUT VS(
 float4 PS(    
     float2 Tex  : TEXCOORD0) : COLOR
 {
-    //return tex2D(Sampler, Tex);
+    return tex2D(Sampler, Tex);
     
-    return float4( 1.0, 1.0, 1.0, 1.0 );
+    // return float4( 1.0, 1.0, 1.0, 1.0 );
 }
 
 technique t0

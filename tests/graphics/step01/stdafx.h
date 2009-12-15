@@ -17,6 +17,8 @@
 #include <memory.h>
 #include <tchar.h>
 
+#define D3D_DEBUG_INFO
+#include <d3d9.h>
 
 // TODO: reference additional headers your program requires here
 #include <kcore/corebase.h>
