@@ -15,6 +15,15 @@ struct VS_OUTPUT
     float2 Tex  : TEXCOORD0;
 };
 
+sampler Sampler = sampler_state
+{
+    Texture   = (tex0);
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+};
+
+
 VS_OUTPUT VS(
     float3 Pos  : POSITION, 
     float3 Norm : NORMAL, 
@@ -25,27 +34,27 @@ VS_OUTPUT VS(
     float4x4 WorldView = mul(World, View);
 
     float3 P = mul(float4(Pos, 1), (float4x3)WorldView);  // position (view space)
-
     Out.Pos  = mul(float4(P, 1), Projection);             // position (projected)
     Out.Tex  = Tex;                                       
 
     return Out;
 }
 
-sampler Sampler = sampler_state
+float4 PS(    
+    float2 Tex  : TEXCOORD0) : COLOR
 {
-    Texture   = (tex0);
-    MipFilter = LINEAR;
-    MinFilter = LINEAR;
-    MagFilter = LINEAR;
-};
+    //return tex2D(Sampler, Tex);
+    
+    return float4( 1.0, 1.0, 1.0, 1.0 );
+}
 
 technique t0
 {
     pass p0
     {
         // lighting
-        Lighting       = FALSE;
+        Lighting   = FALSE;
+     	CullMode   = None;
 
         // samplers
         Sampler[0] = (Sampler);
@@ -62,8 +71,8 @@ technique t0
         AlphaOp[1]   = DISABLE;
 
         // shaders
-        VertexShader = compile vs_1_1 VS();
-        PixelShader  = NULL;
+        VertexShader = compile vs_2_0 VS();
+        PixelShader  = compile ps_2_0 PS();
     }
 }
 

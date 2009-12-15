@@ -307,6 +307,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\test.fx"
+				>
+			</File>
+			<File
 				RelativePath=".\testmodel.xml"
 				>
 			</File>

@@ -72,6 +72,7 @@ void BasicModel::Draw( Renderer* renderer )
 	{
 		m_effect->BeginPass( i );
 
+		renderer->SetFvf( TriMesh::FVF );
 		renderer->SetStreamSource( m_vbuf );
 		renderer->SetIndices( m_ibuf );
 

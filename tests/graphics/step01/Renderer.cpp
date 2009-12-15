@@ -44,6 +44,11 @@ void Renderer::SetStreamSource( VertexBuffer* vbuf )
 	m_device->SetStreamSource( 0, vbuf->GetBuffer(), 0, vbuf->GetStride() );
 }
 
+void Renderer::SetFvf( int fvf )
+{
+	m_device->SetFVF( fvf );
+}
+
 void Renderer::SetIndices( IndexBuffer* ibuf )
 {
 	K_ASSERT( ibuf != 0 );
@@ -136,9 +141,12 @@ Renderer::CreateEffect( const std::string& file )
 					) ) )
 	{
 		return new Effect( effect );
-	}
+	}	
 
-	MessageBoxA( NULL, (LPCSTR)error->GetBufferPointer(), "Error", MB_OK );
+	if ( error )
+	{
+		MessageBoxA( NULL, (LPCSTR)error->GetBufferPointer(), "Error", MB_OK );
+	}
 
 	return (Effect*)0;
 }
@@ -204,3 +212,25 @@ void Renderer::releaseDevice()
 		m_device = 0;
 	}
 }
+
+
+/* 
+ Shader를 일반화 시키려면 Constant의 지정을 Semantic, Annotation으로 얻어와서 지정하기와 
+ 버텍스 형식을 일반화 시켜서 지정하는 게 필요하다. 
+
+ shader가 동작하면 이 작업을 해서 좀 더 읿반화된 shader 기능을 만든다. 
+
+
+ D3DVERTEXELEMENT9 g_aVertDecl[] =
+{
+{ 0, sizeof( float ) * 0, D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_POSITION, 0 },
+{ 0, sizeof( float ) * 3, D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_NORMAL, 0 },
+{ 0, sizeof( float ) * 6, D3DDECLTYPE_FLOAT2, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_TEXCOORD, 0 },
+{ 0, sizeof( float ) * 8, D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_TEXCOORD, 1 },
+{ 0, sizeof( float ) * 11, D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_TEXCOORD, 2 },
+D3DDECL_END()
+};
+
+
+
+*/ 

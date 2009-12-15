@@ -41,6 +41,8 @@ public:
 	/// Set stream source to draw
 	void SetStreamSource( VertexBuffer* vbuf );
 
+	void SetFvf( int fvf );
+
 	/// Set indices to draw
 	void SetIndices( IndexBuffer* ibuf );
 

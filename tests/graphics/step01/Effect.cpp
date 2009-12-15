@@ -14,7 +14,8 @@ Effect::~Effect()
 {
 	if ( m_effect != 0 )
 	{
-		K_DELETE( m_effect );
+		m_effect->Release();
+		m_effect = 0;
 	}
 }
 
