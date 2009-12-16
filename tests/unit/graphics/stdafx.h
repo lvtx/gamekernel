@@ -11,5 +11,6 @@
 #include <tchar.h>
 
 
+#include <kcore/corebase.h>
 
 // TODO: reference additional headers your program requires here

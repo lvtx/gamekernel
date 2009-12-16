@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 
+#include "tests/TestWindowApplication.h"
 #include <gtest/gtest.h>
 
 int _tmain(int argc, _TCHAR* argv[])
