@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "Euler.h"
+#include <kgraphics/math/Euler.h>
 
 
 // empty

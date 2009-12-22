@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "Matrix.h"
+#include <kgraphics/math/Matrix.h>
 
 using namespace gfx;
 

@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="gtestd.lib"
+				AdditionalDependencies="gtestd.lib d3d9.lib d3dx9.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="../../../kext/gtest/lib"
 				GenerateDebugInformation="true"
@@ -136,7 +136,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="gtest.lib"
+				AdditionalDependencies="gtest.lib d3d9.lib d3dx9.lib"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="../../../kext/gtest/lib"
 				GenerateDebugInformation="true"
@@ -247,10 +247,98 @@
 			<Filter
 				Name="math"
 				>
+				<File
+					RelativePath="..\..\..\kgraphics\math\Euler.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\math\Euler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\math\Math.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\math\Math.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\math\Matrix.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\math\Matrix.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\math\Quaternion.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\math\Quaternion.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\math\Vector.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\math\Vector.h"
+					>
+				</File>
 			</Filter>
 			<Filter
 				Name="renderer"
 				>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\Effect.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\Effect.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\IndexBuffer.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\IndexBuffer.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\Renderer.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\Renderer.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\Texture.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\Texture.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\TriMesh.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\TriMesh.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\VertexBuffer.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kgraphics\renderer\VertexBuffer.h"
+					>
+				</File>
 			</Filter>
 			<Filter
 				Name="scene"
@@ -269,6 +357,18 @@
 				>
 				<File
 					RelativePath="..\..\..\kcore\base\Assert.cpp"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="sys"
+				>
+				<File
+					RelativePath="..\..\..\kcore\sys\Platform.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\kcore\sys\Platform.h"
 					>
 				</File>
 			</Filter>

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "VertexBuffer.h"
+#include <kgraphics/renderer/VertexBuffer.h>
 
 using namespace gfx; 
 

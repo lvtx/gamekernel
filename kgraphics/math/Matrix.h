@@ -1,7 +1,7 @@
 #pragma once 
 
-#include "Euler.h"
-#include "Vector.h"
+#include <kgraphics/math/Euler.h>
+#include <kgraphics/math/Vector.h>
 
 namespace gfx {
 /** 

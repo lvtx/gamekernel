@@ -1,9 +1,9 @@
 #pragma once 
 
-#include "Effect.h"
-#include "IndexBuffer.h"
-#include "Texture.h"
-#include "VertexBuffer.h"
+#include <kgraphics/renderer/Effect.h>
+#include <kgraphics/renderer/IndexBuffer.h>
+#include <kgraphics/renderer/Texture.h>
+#include <kgraphics/renderer/VertexBuffer.h>
 
 #include <d3d9.h>
 #include <d3dx9.h>

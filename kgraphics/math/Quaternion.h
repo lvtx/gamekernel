@@ -1,6 +1,7 @@
 #pragma once 
 
-#include "Vector.h"
+#include <kgraphics/math/Vector.h>
+#include <kgraphics/math/Matrix.h>
 
 namespace gfx
 {

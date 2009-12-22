@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "Renderer.h"
+#include <kgraphics/renderer/Renderer.h>
 
 #include <dxerr.h>
 
@@ -105,7 +105,7 @@ void Renderer::LogError( HRESULT hr )
 		    DXGetErrorString(hr),
 			DXGetErrorDescription(hr));
 
-	OutputDebugString(buf);
+	OutputDebugStringA(buf);
 }
 
 VertexBuffer* 

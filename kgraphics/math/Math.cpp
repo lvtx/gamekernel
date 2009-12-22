@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "Math.h"
+#include <kgraphics/math/Math.h>
 
 #include <math.h>
 

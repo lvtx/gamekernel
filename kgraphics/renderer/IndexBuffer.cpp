@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "IndexBuffer.h"
+#include <kgraphics/renderer/IndexBuffer.h>
 
 using namespace gfx; 
 
