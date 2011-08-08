@@ -1,6 +1,6 @@
 #pragma once 
 
-#include <kgraphics/math/Math.h>
+#include <kgraphics/math/math.h>
 
 namespace gfx {
 /** 
