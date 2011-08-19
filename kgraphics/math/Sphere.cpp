@@ -66,7 +66,7 @@ operator<<(Writer& out, const BoundingSphere& source)
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 BoundingSphere::operator==( const BoundingSphere& other ) const
 {
     if ( other.mCenter == mCenter && other.mRadius == mRadius )
@@ -81,7 +81,7 @@ BoundingSphere::operator==( const BoundingSphere& other ) const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 BoundingSphere::operator!=( const BoundingSphere& other ) const
 {
     if ( other.mCenter != mCenter || other.mRadius != mRadius )
@@ -165,7 +165,7 @@ BoundingSphere::Transform( float scale, const Matrix33& rotate,
 // ---------------------------------------------------------------------------
 // Determine intersection between sphere and sphere
 //-----------------------------------------------------------------------------
-Bool 
+bool 
 BoundingSphere::Intersect( const BoundingSphere& other ) const
 {
     // do sphere check
@@ -183,7 +183,7 @@ BoundingSphere::Intersect( const BoundingSphere& other ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between sphere and line
 //-----------------------------------------------------------------------------
-Bool
+bool
 BoundingSphere::Intersect( const Line3& line ) const
 {
     // compute intermediate values
@@ -203,7 +203,7 @@ BoundingSphere::Intersect( const Line3& line ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between sphere and ray
 //-----------------------------------------------------------------------------
-Bool
+bool
 BoundingSphere::Intersect( const Ray3& ray ) const
 {
     // compute intermediate values
@@ -227,7 +227,7 @@ BoundingSphere::Intersect( const Ray3& ray ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between sphere and line segment
 //-----------------------------------------------------------------------------
-Bool
+bool
 BoundingSphere::Intersect( const LineSegment3& segment ) const
 {
     // compute intermediate values
@@ -314,7 +314,7 @@ Merge( BoundingSphere& result,
 // ---------------------------------------------------------------------------
 // Compute parameters for collision between sphere and sphere
 //-----------------------------------------------------------------------------
-Bool 
+bool 
 BoundingSphere::ComputeCollision( const BoundingSphere& other, Vector3& collisionNormal, 
                       Vector3& collisionPoint, float& penetration ) const
 {

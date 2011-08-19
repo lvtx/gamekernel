@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Res">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="kcore">
+      <UniqueIdentifier>{f98d8d02-bfa0-4de8-8a1f-aa6ac2e92103}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="kgraphics">
+      <UniqueIdentifier>{007ad73e-a4da-418d-9bf3-1d2cf234c3a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="kgraphics\math">
+      <UniqueIdentifier>{3bc9cede-ef7b-441a-a71a-79aef34d91ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="kgraphics\renderer">
+      <UniqueIdentifier>{7c2ebf6a-7081-439c-8659-7917672685a5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kcore\corebase.h">
+      <Filter>kcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kcore\base\Macros.h">
+      <Filter>kcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kcore\base\Noncopyable.h">
+      <Filter>kcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kcore\base\PanicError.h">
+      <Filter>kcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kcore\base\Result.h">
+      <Filter>kcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kcore\xml\tinystr.h">
+      <Filter>kcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kcore\xml\tinyxml.h">
+      <Filter>kcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kcore\base\Types.h">
+      <Filter>kcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kcore\base\Unit.h">
+      <Filter>kcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Vector4.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Vector.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Writer.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\AABB.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Bezier.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Capsule.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\CatmullRom.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Covariance.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Euler.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\FileReader.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\GaussianElim.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Hermite.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Lagrange.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Line3.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Linear.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\LineSegment3.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Math.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Matrix33.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Matrix44.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\OBB.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Plane.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Quat.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Ray3.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Reader.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Rect.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Sphere.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Triangle.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\UniformBSpline.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Vector2.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\math\Vector3.h">
+      <Filter>kgraphics\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\kgraphics\renderer\Renderer.h">
+      <Filter>kgraphics\renderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kcore\base\Assert.cpp">
+      <Filter>kcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kcore\xml\tinystr.cpp">
+      <Filter>kcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kcore\xml\tinyxml.cpp">
+      <Filter>kcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kcore\xml\tinyxmlerror.cpp">
+      <Filter>kcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kcore\xml\tinyxmlparser.cpp">
+      <Filter>kcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Vector.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Writer.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\AABB.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Bezier.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Capsule.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\CatmullRom.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Covariance.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Euler.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\GaussianElim.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Hermite.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Lagrange.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Line3.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Linear.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\LineSegment3.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Math.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Matrix33.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Matrix44.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\OBB.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Plane.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Quat.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Ray3.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Rect.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Sphere.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Triangle.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\UniformBSpline.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Vector2.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Vector3.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\math\Vector4.cpp">
+      <Filter>kgraphics\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kgraphics\renderer\Renderer.cpp">
+      <Filter>kgraphics\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -22,13 +22,13 @@ public:
     friend Writer& operator<<( Writer& out, const Bezier& source );
 
     // set up
-    Bool Initialize( const Vector3* positions, 
+    bool Initialize( const Vector3* positions, 
                      const Vector3* controls,
                      const float* times,
                      unsigned int count );
 
     // automatically create control points
-    Bool Initialize( const Vector3* positions, 
+    bool Initialize( const Vector3* positions, 
                      const float* times,
                      unsigned int count );
 

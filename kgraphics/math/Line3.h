@@ -35,8 +35,8 @@ public:
     void Get( Vector3& origin, Vector3& direction ) const;
 
     // comparison
-    Bool operator==( const Line3& line ) const;
-    Bool operator!=( const Line3& line ) const;
+    bool operator==( const Line3& line ) const;
+    bool operator!=( const Line3& line ) const;
 
     // manipulators
     void Set( const Vector3& origin, const Vector3& direction );
@@ -62,7 +62,7 @@ public:
         return Sqrt( DistanceSquared( line, point, t_c ) );
     }
 
-	inline Bool GetIntersectionWithSphere(Vector3 sorigin, Float sradius, Float& outdistance) const;
+	inline bool GetIntersectionWithSphere(Vector3 sorigin, Float sradius, Float& outdistance) const;
 
 
 
@@ -80,7 +80,7 @@ private:
 };
 
 inline 
-Bool
+bool
 Line3::GetIntersectionWithSphere(Vector3 sorigin, Float sradius, Float& outdistance) const
 {
 	const Vector3 q = sorigin - mOrigin;

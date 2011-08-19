@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>opengl</ProjectName>
+    <ProjectGuid>{A99439C7-46B2-47F1-AF1F-FBA285885EB9}</ProjectGuid>
+    <RootNamespace>shader1</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;dxerr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../../../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\kgraphics\math\AABB.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Bezier.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Capsule.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\CatmullRom.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Covariance.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Euler.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\FileReader.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\GaussianElim.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Hermite.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Lagrange.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Line3.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Linear.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\LineSegment3.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Math.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Matrix33.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Matrix44.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\OBB.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Plane.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Quat.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Ray3.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Reader.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Rect.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Sphere.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Triangle.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\UniformBSpline.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Vector.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Vector2.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Vector3.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Vector4.h" />
+    <ClInclude Include="..\..\..\kgraphics\math\Writer.h" />
+    <ClInclude Include="..\..\..\kgraphics\renderer\Renderer.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\..\kcore\corebase.h" />
+    <ClInclude Include="..\..\..\kcore\base\Macros.h" />
+    <ClInclude Include="..\..\..\kcore\base\Noncopyable.h" />
+    <ClInclude Include="..\..\..\kcore\base\PanicError.h" />
+    <ClInclude Include="..\..\..\kcore\base\Result.h" />
+    <ClInclude Include="..\..\..\kcore\xml\tinystr.h" />
+    <ClInclude Include="..\..\..\kcore\xml\tinyxml.h" />
+    <ClInclude Include="..\..\..\kcore\base\Types.h" />
+    <ClInclude Include="..\..\..\kcore\base\Unit.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\kgraphics\math\AABB.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Bezier.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Capsule.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\CatmullRom.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Covariance.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Euler.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\GaussianElim.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Hermite.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Lagrange.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Line3.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Linear.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\LineSegment3.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Math.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Matrix33.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Matrix44.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\OBB.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Plane.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Quat.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Ray3.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Rect.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Sphere.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Triangle.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\UniformBSpline.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Vector.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Vector2.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Vector3.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Vector4.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\math\Writer.cpp" />
+    <ClCompile Include="..\..\..\kgraphics\renderer\Renderer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\kcore\base\Assert.cpp" />
+    <ClCompile Include="..\..\..\kcore\xml\tinystr.cpp" />
+    <ClCompile Include="..\..\..\kcore\xml\tinyxml.cpp" />
+    <ClCompile Include="..\..\..\kcore\xml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\..\..\kcore\xml\tinyxmlparser.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

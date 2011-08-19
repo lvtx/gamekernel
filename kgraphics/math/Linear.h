@@ -21,7 +21,7 @@ public:
     friend Writer& operator<<( Writer& out, const Linear& source );
 
     // set up
-    Bool Initialize( const Vector3* samples, const float* times,
+    bool Initialize( const Vector3* samples, const float* times,
                      unsigned int count );
 
     // clean up

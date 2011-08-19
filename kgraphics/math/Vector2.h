@@ -26,9 +26,9 @@ public:
     float LengthSquared() const;
 
     // comparison
-    Bool operator==( const Vector2& other ) const;
-    Bool operator!=( const Vector2& other ) const;
-    Bool IsZero() const;
+    bool operator==( const Vector2& other ) const;
+    bool operator!=( const Vector2& other ) const;
+    bool IsZero() const;
 
     // manipulators
     inline void Set( float _x, float _y );

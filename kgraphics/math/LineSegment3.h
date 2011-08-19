@@ -45,8 +45,8 @@ public:
     float LengthSquared() const;
 
     // comparison
-    Bool operator==( const LineSegment3& segment ) const;
-    Bool operator!=( const LineSegment3& segment ) const;
+    bool operator==( const LineSegment3& segment ) const;
+    bool operator!=( const LineSegment3& segment ) const;
 
     // manipulators
     void Set( const Vector3& end0, const Vector3& end1 );

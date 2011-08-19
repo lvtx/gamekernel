@@ -30,10 +30,10 @@ public:
     float LengthSquared() const;
 
     // comparison
-    Bool operator==( const Vector4& other ) const;
-    Bool operator!=( const Vector4& other ) const;
-    Bool IsZero() const;
-    Bool IsUnit() const;
+    bool operator==( const Vector4& other ) const;
+    bool operator!=( const Vector4& other ) const;
+    bool IsZero() const;
+    bool IsUnit() const;
 
     // manipulators
     inline void Set( float _x, float _y, float _z, float _w );

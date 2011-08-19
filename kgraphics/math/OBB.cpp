@@ -70,7 +70,7 @@ operator<<(Writer& out, const OBB& source)
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 OBB::operator==( const OBB& other ) const
 {
     if ( other.mCenter == mCenter && other.mRotation == mRotation
@@ -86,7 +86,7 @@ OBB::operator==( const OBB& other ) const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 OBB::operator!=( const OBB& other ) const
 {
     if ( other.mCenter != mCenter || other.mRotation != mRotation
@@ -204,7 +204,7 @@ OBB::Transform( float scale, const Matrix33& rotate,
 // before the first axis test, then the second row, etc.  It has been left this
 // way because it's clearer.
 //-----------------------------------------------------------------------------
-Bool 
+bool 
 OBB::Intersect( const OBB& other ) const
 {
     // extent vectors
@@ -213,7 +213,7 @@ OBB::Intersect( const OBB& other ) const
 
     // test factors
     float cTest, aTest, bTest;
-    Bool parallelAxes = false;
+    bool parallelAxes = false;
 
     // transpose of rotation of B relative to A, i.e. (R_b^T * R_a)^T
     Matrix33 Rt = Transpose(mRotation)*other.mRotation;
@@ -356,7 +356,7 @@ OBB::Intersect( const OBB& other ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between OBB and line
 //-----------------------------------------------------------------------------
-Bool
+bool
 OBB::Intersect( const Line3& line ) const
 {
     float maxS = -FLT_MAX;
@@ -416,7 +416,7 @@ OBB::Intersect( const Line3& line ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between OBB and ray
 //-----------------------------------------------------------------------------
-Bool
+bool
 OBB::Intersect( const Ray3& ray ) const
 {
     float maxS = -FLT_MAX;
@@ -476,7 +476,7 @@ OBB::Intersect( const Ray3& ray ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between OBB and line segment
 //-----------------------------------------------------------------------------
-Bool
+bool
 OBB::Intersect( const LineSegment3& segment ) const
 {
     float maxS = -FLT_MAX;

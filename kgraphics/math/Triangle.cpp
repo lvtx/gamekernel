@@ -10,20 +10,20 @@
 namespace gfx {
 
 // helper functions
-inline Bool AdjustQ( const Vector3& P0, const Vector3& P1, 
+inline bool AdjustQ( const Vector3& P0, const Vector3& P1, 
                      const Vector3& P2, const Vector3& Q0, 
                      const Vector3& Q1, const Vector3& Q2,
                      float testQ0, float testQ1, float testQ2,
                      const Vector3& normalP );
-inline Bool TestLineOverlap( const Vector3& P0, const Vector3& P1, 
+inline bool TestLineOverlap( const Vector3& P0, const Vector3& P1, 
                      const Vector3& P2, const Vector3& Q0, 
                      const Vector3& Q1, const Vector3& Q2 );
-inline Bool CoplanarTriangleIntersect( const Vector3& P0, 
+inline bool CoplanarTriangleIntersect( const Vector3& P0, 
                      const Vector3& P1, const Vector3& P2, 
                      const Vector3& Q0, const Vector3& Q1, 
                      const Vector3& Q2, const Vector3& planeNormal );
 
-inline Bool EdgeTest( const Vector2& edgePoint, const Vector2& edgeVector, 
+inline bool EdgeTest( const Vector2& edgePoint, const Vector2& edgeVector, 
        float n, const Vector2& P0, const Vector2& P1, const Vector2& P2 );
 
 //-------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ inline Bool EdgeTest( const Vector2& edgePoint, const Vector2& edgeVector,
 // Returns true if point on triangle plane lies inside triangle (3D version)
 // Assumes triangle is not degenerate
 //-------------------------------------------------------------------------------
-Bool IsPointInTriangle( const Vector3& point, const Vector3& P0,
+bool IsPointInTriangle( const Vector3& point, const Vector3& P0,
                         const Vector3& P1, const Vector3& P2 )
 {
     Vector3 v0 = P1 - P0;
@@ -109,7 +109,7 @@ void BarycentricCoordinates( float &r, float &s, float& t,
 //
 // Yes, this is complicated.  Did you think testing triangles would be easy?
 //-------------------------------------------------------------------------------
-Bool TriangleIntersect( const Vector3& P0, const Vector3& P1, 
+bool TriangleIntersect( const Vector3& P0, const Vector3& P1, 
                         const Vector3& P2, const Vector3& Q0, 
                         const Vector3& Q1, const Vector3& Q2 )
 {
@@ -221,7 +221,7 @@ Bool TriangleIntersect( const Vector3& P0, const Vector3& P1,
 // Once reordered, we pass the vertices down to a helper function which will
 // actually test for intersection on the common line between the two planes
 //-------------------------------------------------------------------------------
-inline Bool 
+inline bool 
 AdjustQ( const Vector3& P0, const Vector3& P1, 
                    const Vector3& P2, const Vector3& Q0, 
                    const Vector3& Q1, const Vector3& Q2,
@@ -307,7 +307,7 @@ AdjustQ( const Vector3& P0, const Vector3& P1,
 // intervals overlap.  Previous algorithms computed these intervals directly, 
 // this tests implictly by using two "plane tests."
 //-------------------------------------------------------------------------------
-inline Bool 
+inline bool 
 TestLineOverlap( const Vector3& P0, const Vector3& P1, 
                    const Vector3& P2, const Vector3& Q0, 
                    const Vector3& Q1, const Vector3& Q2 )
@@ -339,7 +339,7 @@ TestLineOverlap( const Vector3& P0, const Vector3& P1,
 // This projects the two triangles down to 2D, maintaining the largest area by
 // dropping the dimension where the normal points the farthest.
 //-------------------------------------------------------------------------------
-inline Bool CoplanarTriangleIntersect( const Vector3& P0, 
+inline bool CoplanarTriangleIntersect( const Vector3& P0, 
                      const Vector3& P1, const Vector3& P2, 
                      const Vector3& Q0, const Vector3& Q1, 
                      const Vector3& Q2, const Vector3& planeNormal )
@@ -391,7 +391,7 @@ inline Bool CoplanarTriangleIntersect( const Vector3& P0,
 //-------------------------------------------------------------------------------
 // Returns true if ray intersects triangle
 //-------------------------------------------------------------------------------
-Bool
+bool
 TriangleIntersect( float& t, const Vector3& P0, const Vector3& P1, 
                    const Vector3& P2, const Ray3& ray )
 {
@@ -502,7 +502,7 @@ TriangleClassify( const Vector3& P0, const Vector3& P1,
 // Returns true if point lies inside triangle (2D version)
 // Assumes triangle is not degenerate
 //-------------------------------------------------------------------------------
-Bool IsPointInTriangle( const Vector2& point, const Vector2& P0,
+bool IsPointInTriangle( const Vector2& point, const Vector2& P0,
                         const Vector2& P1, const Vector2& P2 )
 {
     Vector2 v0 = P1 - P0;
@@ -575,7 +575,7 @@ void BarycentricCoordinates( float &r, float &s, float& t,
 // See // http://www.acm.org/jgt/papers/GuigueDevillers03/ for another possible
 // implementation.
 //-------------------------------------------------------------------------------
-Bool TriangleIntersect( const Vector2& P0, const Vector2& P1, 
+bool TriangleIntersect( const Vector2& P0, const Vector2& P1, 
                         const Vector2& P2, const Vector2& Q0, 
                         const Vector2& Q1, const Vector2& Q2 )
 {
@@ -627,7 +627,7 @@ Bool TriangleIntersect( const Vector2& P0, const Vector2& P1,
 // Given an edge vector and origin, triangle "normal" value, and three points,
 // determine if all three points lie outside the edge
 //-------------------------------------------------------------------------------
-inline Bool 
+inline bool 
 EdgeTest( const Vector2& edgePoint, const Vector2& edgeVector, float n, 
           const Vector2& P0, const Vector2& P1, const Vector2& P2 )
 {

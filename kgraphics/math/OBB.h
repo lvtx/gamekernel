@@ -35,8 +35,8 @@ public:
     inline const Vector3& GetExtents() const  { return mExtents; }
 
     // comparison
-    Bool operator==( const OBB& other ) const;
-    Bool operator!=( const OBB& other ) const;
+    bool operator==( const OBB& other ) const;
+    bool operator!=( const OBB& other ) const;
 
     // manipulators
     void Set( const Vector3* points, unsigned int numPoints );
@@ -51,10 +51,10 @@ public:
                      const Vector3& translation ) const;
 
     // intersection
-    Bool Intersect( const OBB& other ) const;
-    Bool Intersect( const Line3& line ) const;
-    Bool Intersect( const Ray3& ray ) const;
-    Bool Intersect( const LineSegment3& segment ) const;
+    bool Intersect( const OBB& other ) const;
+    bool Intersect( const Line3& line ) const;
+    bool Intersect( const Ray3& ray ) const;
+    bool Intersect( const LineSegment3& segment ) const;
 
     // signed distance to plane
     float Classify( const Plane& plane ) const;

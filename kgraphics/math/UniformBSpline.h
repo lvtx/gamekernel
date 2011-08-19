@@ -22,7 +22,7 @@ public:
     friend Writer& operator<<( Writer& out, const UniformBSpline& source );
 
     // set up
-    Bool Initialize( const Vector3* positions, 
+    bool Initialize( const Vector3* positions, 
                      unsigned int count,
                      float startTime, float endTime );
 

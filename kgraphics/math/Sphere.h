@@ -36,8 +36,8 @@ public:
     inline float GetRadius() const { return mRadius; }
 
     // comparison
-    Bool operator==( const BoundingSphere& other ) const;
-    Bool operator!=( const BoundingSphere& other ) const;
+    bool operator==( const BoundingSphere& other ) const;
+    bool operator!=( const BoundingSphere& other ) const;
 
     // manipulators
     inline void SetCenter( const Vector3& center )  { mCenter = center; }
@@ -52,10 +52,10 @@ public:
                          const Vector3& translation ) const;
 
     // intersection
-    Bool Intersect( const BoundingSphere& other ) const;
-    Bool Intersect( const Line3& line ) const;
-    Bool Intersect( const Ray3& ray ) const;
-    Bool Intersect( const LineSegment3& segment ) const;
+    bool Intersect( const BoundingSphere& other ) const;
+    bool Intersect( const Line3& line ) const;
+    bool Intersect( const Ray3& ray ) const;
+    bool Intersect( const LineSegment3& segment ) const;
 
     // signed distance to plane
     float Classify( const Plane& plane ) const;
@@ -65,7 +65,7 @@ public:
        const BoundingSphere& s0, const BoundingSphere& s1 );
 
     // collision parameters
-    Bool ComputeCollision( const BoundingSphere& other, 
+    bool ComputeCollision( const BoundingSphere& other, 
                            Vector3& collisionNormal, 
                            Vector3& collisionPoint, 
                            float& penetration ) const;

@@ -61,7 +61,7 @@ operator<<(Writer& out, const Bezier& source)
 //-------------------------------------------------------------------------------
 // Set up sample points
 //-------------------------------------------------------------------------------
-Bool
+bool
 Bezier::Initialize( const Vector3* positions,
                        const Vector3* controls,
                        const float* times,
@@ -115,7 +115,7 @@ Bezier::Initialize( const Vector3* positions,
 //-------------------------------------------------------------------------------
 // Set up sample points
 //-------------------------------------------------------------------------------
-Bool
+bool
 Bezier::Initialize( const Vector3* positions,
                        const float* times,
                        unsigned int count )

@@ -30,8 +30,8 @@ public:
     void Get( Vector3& origin, Vector3& direction ) const;
 
     // comparison
-    Bool operator==( const Ray3& ray ) const;
-    Bool operator!=( const Ray3& ray ) const;
+    bool operator==( const Ray3& ray ) const;
+    bool operator!=( const Ray3& ray ) const;
 
     // manipulators
     void Set( const Vector3& origin, const Vector3& direction );

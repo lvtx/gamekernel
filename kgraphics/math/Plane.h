@@ -36,8 +36,8 @@ public:
     void Get( Vector3& normal, float& direction ) const;
 
     // comparison
-    Bool operator==( const Plane& ray ) const;
-    Bool operator!=( const Plane& ray ) const;
+    bool operator==( const Plane& ray ) const;
+    bool operator!=( const Plane& ray ) const;
 
     // manipulators
     void Set( float a, float b, float c, float d );

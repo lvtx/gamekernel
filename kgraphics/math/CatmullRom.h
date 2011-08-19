@@ -22,7 +22,7 @@ public:
     friend Writer& operator<<( Writer& out, const CatmullRom& source );
 
     // set up
-    Bool Initialize( const Vector3* positions, 
+    bool Initialize( const Vector3* positions, 
                      const float* times,
                      unsigned int count );
 

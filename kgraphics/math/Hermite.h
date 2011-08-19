@@ -18,27 +18,27 @@ public:
 
     // set up
     // default
-    Bool Initialize( const Vector3* positions, 
+    bool Initialize( const Vector3* positions, 
                      const Vector3* inTangents,
                      const Vector3* outTangents,
                      const float* times,
                      unsigned int count );
     // clamped spline
-    Bool InitializeClamped( const Vector3* positions, 
+    bool InitializeClamped( const Vector3* positions, 
                             const float* times,
                             unsigned int count,
                             const Vector3& inTangent,
                             const Vector3& outTangent );
     // natural spline
-    Bool InitializeNatural( const Vector3* positions, 
+    bool InitializeNatural( const Vector3* positions, 
                             const float* times,
                             unsigned int count );
     // cyclic spline
-    Bool InitializeCyclic( const Vector3* positions, 
+    bool InitializeCyclic( const Vector3* positions, 
                            const float* times,
                            unsigned int count );
     // acyclic spline
-    Bool InitializeAcyclic( const Vector3* positions, 
+    bool InitializeAcyclic( const Vector3* positions, 
                             const float* times,
                             unsigned int count );
 

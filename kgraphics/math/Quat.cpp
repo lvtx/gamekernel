@@ -167,7 +167,7 @@ Quat::Norm() const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Quat::operator==( const Quat& other ) const
 {
     if ( gfx::IsZero( other.w - w )
@@ -185,7 +185,7 @@ Quat::operator==( const Quat& other ) const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Quat::operator!=( const Quat& other ) const
 {
     if ( gfx::IsZero( other.w - w )
@@ -203,7 +203,7 @@ Quat::operator!=( const Quat& other ) const
 //-------------------------------------------------------------------------------
 // Check for zero quat
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Quat::IsZero() const
 {
     return gfx::IsZero(w*w + x*x + y*y + z*z);
@@ -216,7 +216,7 @@ Quat::IsZero() const
 //-------------------------------------------------------------------------------
 // Check for unit quat
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Quat::IsUnit() const
 {
     return gfx::IsZero(1.0f - w*w - x*x - y*y - z*z);
@@ -229,7 +229,7 @@ Quat::IsUnit() const
 //-------------------------------------------------------------------------------
 // Check for identity quat
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Quat::IsIdentity() const
 {
     return gfx::IsZero(1.0f - w)

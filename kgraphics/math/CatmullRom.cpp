@@ -57,7 +57,7 @@ operator<<(Writer& out, const CatmullRom& source)
 //-------------------------------------------------------------------------------
 // Set up sample points
 //-------------------------------------------------------------------------------
-Bool
+bool
 CatmullRom::Initialize( const Vector3* positions,
                        const float* times,
                        unsigned int count )

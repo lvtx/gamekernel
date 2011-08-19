@@ -31,10 +31,10 @@ public:
     inline float operator()(unsigned int i, unsigned int j) const;
 
     // comparison
-    Bool operator==( const Matrix33& other ) const;
-    Bool operator!=( const Matrix33& other ) const;
-    Bool IsZero() const;
-    Bool IsIdentity() const;
+    bool operator==( const Matrix33& other ) const;
+    bool operator!=( const Matrix33& other ) const;
+    bool IsZero() const;
+    bool IsIdentity() const;
 
     // manipulators
     void SetRows( const Vector3& row1, const Vector3& row2, const Vector3& row3 ); 

@@ -44,8 +44,8 @@ public:
     inline const Vector3& GetMaxima() const { return mMaxima; }
 
     // comparison
-    Bool operator==( const AABB& other ) const;
-    Bool operator!=( const AABB& other ) const;
+    bool operator==( const AABB& other ) const;
+    bool operator!=( const AABB& other ) const;
 
     // manipulators
     void Set( const Vector3* points, unsigned int numPoints );
@@ -54,11 +54,11 @@ public:
 	inline Vector3 GetCenter() const;
 
     // intersection
-    Bool Intersect( const AABB& other ) const;
-    Bool Intersect( const Line3& line ) const;
-    Bool Intersect( const Ray3& ray ) const;
-    Bool Intersect( const LineSegment3& segment ) const;
-	Bool isPointInside(const Vector3& p) const;
+    bool Intersect( const AABB& other ) const;
+    bool Intersect( const Line3& line ) const;
+    bool Intersect( const Ray3& ray ) const;
+    bool Intersect( const LineSegment3& segment ) const;
+	bool isPointInside(const Vector3& p) const;
 
 
     // signed distance to plane
@@ -77,7 +77,7 @@ private:
 //-------------------------------------------------------------------------------
 //-- Inlines --------------------------------------------------------------------
 //-------------------------------------------------------------------------------
-inline Bool
+inline bool
 AABB::isPointInside(const Vector3& p) const
 {
 	return (p.x >= mMinima.x && p.x <= mMaxima.x &&

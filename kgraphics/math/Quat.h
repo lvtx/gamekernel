@@ -38,11 +38,11 @@ public:
     float Norm() const;
 
     // comparison
-    Bool operator==( const Quat& other ) const;
-    Bool operator!=( const Quat& other ) const;
-    Bool IsZero() const;
-    Bool IsUnit() const;
-    Bool IsIdentity() const;
+    bool operator==( const Quat& other ) const;
+    bool operator!=( const Quat& other ) const;
+    bool IsZero() const;
+    bool IsUnit() const;
+    bool IsIdentity() const;
 
     // manipulators
     inline void Set( float _w, float _x, float _y, float _z );

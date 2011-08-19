@@ -46,8 +46,8 @@ public:
     float LengthSquared() const;
 
     // comparison
-    Bool operator==( const Capsule& other ) const;
-    Bool operator!=( const Capsule& other ) const;
+    bool operator==( const Capsule& other ) const;
+    bool operator!=( const Capsule& other ) const;
 
     // manipulators
     inline void SetSegment( const LineSegment3& segment )  { mSegment = segment; }
@@ -62,10 +62,10 @@ public:
                          const Vector3& translation ) const;
 
     // intersection
-    Bool Intersect( const Capsule& other ) const;
-    Bool Intersect( const Line3& line ) const;
-    Bool Intersect( const Ray3& ray ) const;
-    Bool Intersect( const LineSegment3& segment ) const;
+    bool Intersect( const Capsule& other ) const;
+    bool Intersect( const Line3& line ) const;
+    bool Intersect( const Ray3& ray ) const;
+    bool Intersect( const LineSegment3& segment ) const;
 
     // signed distance to plane
     float Classify( const Plane& plane ) const;
@@ -74,7 +74,7 @@ public:
     friend void Merge( Capsule& result, const Capsule& b0, const Capsule& b1 );
 
     // collision parameters
-    Bool ComputeCollision( const Capsule& other, 
+    bool ComputeCollision( const Capsule& other, 
                            Vector3& collisionNormal, 
                            Vector3& collisionPoint, 
                            float& penetration ) const;

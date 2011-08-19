@@ -56,7 +56,7 @@ operator<<(Writer& out, const Lagrange& source)
 //-------------------------------------------------------------------------------
 // Set up sample points
 //-------------------------------------------------------------------------------
-Bool
+bool
 Lagrange::Initialize( const Vector3* samples, const float* times,
                       unsigned int count )
 {

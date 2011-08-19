@@ -36,10 +36,10 @@ public:
     friend float DistanceSquared( const Vector3& p0, const Vector3& p1 );
 
     // comparison
-    Bool operator==( const Vector3& other ) const;
-    Bool operator!=( const Vector3& other ) const;
-    Bool IsZero() const;
-    Bool IsUnit() const;
+    bool operator==( const Vector3& other ) const;
+    bool operator!=( const Vector3& other ) const;
+    bool IsZero() const;
+    bool IsUnit() const;
 
     // manipulators
     inline void Set( float _x, float _y, float _z );

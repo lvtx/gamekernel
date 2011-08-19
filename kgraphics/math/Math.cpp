@@ -37,7 +37,7 @@ void FastSinCos( float a, float& sina, float& cosa )
 
     // work with a non-negative angle - sin is odd and cos is even, so this is
     // easy to do
-    Bool bNegate = false;
+    bool bNegate = false;
     if (a < 0.0f)
     {
         a = -a;

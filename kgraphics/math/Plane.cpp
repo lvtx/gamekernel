@@ -112,7 +112,7 @@ Plane::Get( Vector3& normal, float& offset ) const
 // ---------------------------------------------------------------------------
 // Are two Plane's equal?
 //----------------------------------------------------------------------------
-Bool
+bool
 Plane::operator==( const Plane& plane ) const
 {
     return (plane.mNormal == mNormal && plane.mOffset == mOffset);
@@ -125,7 +125,7 @@ Plane::operator==( const Plane& plane ) const
 // ---------------------------------------------------------------------------
 // Are two Plane's not equal?
 //----------------------------------------------------------------------------
-Bool
+bool
 Plane::operator!=( const Plane& plane ) const
 {
     return !(plane.mNormal == mNormal && plane.mOffset == mOffset);

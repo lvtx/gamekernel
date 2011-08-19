@@ -12,7 +12,7 @@ namespace gfx {
 // Will destroy original values of A and b
 // Result is returned in b
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Solve( float* b, float* A, unsigned int n )
 {
     // do one pass for each diagonal element
@@ -105,7 +105,7 @@ Solve( float* b, float* A, unsigned int n )
 //-------------------------------------------------------------------------------
 // Invert matrix using Gaussian elimination
 //-------------------------------------------------------------------------------
-Bool
+bool
 InvertMatrix( float* A, unsigned int n )
 {
     unsigned int* swap;       // which row have we swapped with the current one?

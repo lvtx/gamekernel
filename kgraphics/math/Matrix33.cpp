@@ -96,7 +96,7 @@ operator<<(Writer& out, const Matrix33& source)
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Matrix33::operator==( const Matrix33& other ) const
 {
     for (unsigned int i = 0; i < 9; ++i)
@@ -114,7 +114,7 @@ Matrix33::operator==( const Matrix33& other ) const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Matrix33::operator!=( const Matrix33& other ) const
 {
     for (unsigned int i = 0; i < 9; ++i)
@@ -132,7 +132,7 @@ Matrix33::operator!=( const Matrix33& other ) const
 //-------------------------------------------------------------------------------
 // Check for zero matrix
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Matrix33::IsZero() const
 {
     for (unsigned int i = 0; i < 9; ++i)
@@ -150,7 +150,7 @@ Matrix33::IsZero() const
 //-------------------------------------------------------------------------------
 // Check for identity matrix
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Matrix33::IsIdentity() const
 {
     return AreEqual( 1.0f, mV[0] )

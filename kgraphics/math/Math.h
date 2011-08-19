@@ -54,7 +54,7 @@ extern void FastSinCos( float a, float& sina, float& cosa );
 //-------------------------------------------------------------------------------
 // Is this floating point value close to zero?
 //-------------------------------------------------------------------------------
-inline Bool IsZero( float a ) 
+inline bool IsZero( float a ) 
 {
     return ( fabsf(a) < kEpsilon );
 
@@ -65,7 +65,7 @@ inline Bool IsZero( float a )
 //-------------------------------------------------------------------------------
 // Are these floating point values close to equal?
 //-------------------------------------------------------------------------------
-inline Bool AreEqual( float a, float b ) 
+inline bool AreEqual( float a, float b ) 
 {
     return ( IsZero(a-b) );
 

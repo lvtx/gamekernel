@@ -104,7 +104,7 @@ Ray3::Get( Vector3& origin, Vector3& direction ) const
 // ---------------------------------------------------------------------------
 // Are two Ray3's equal?
 //----------------------------------------------------------------------------
-Bool
+bool
 Ray3::operator==( const Ray3& ray ) const
 {
     return (ray.mOrigin == mOrigin && ray.mDirection == mDirection);
@@ -117,7 +117,7 @@ Ray3::operator==( const Ray3& ray ) const
 // ---------------------------------------------------------------------------
 // Are two Ray3's not equal?
 //----------------------------------------------------------------------------
-Bool
+bool
 Ray3::operator!=( const Ray3& ray ) const
 {
     return !(ray.mOrigin == mOrigin && ray.mDirection == mDirection);

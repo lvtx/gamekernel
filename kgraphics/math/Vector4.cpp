@@ -99,7 +99,7 @@ Vector4::LengthSquared() const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Vector4::operator==( const Vector4& other ) const
 {
     if ( AreEqual( other.x, x )
@@ -117,7 +117,7 @@ Vector4::operator==( const Vector4& other ) const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Vector4::operator!=( const Vector4& other ) const
 {
     if ( AreEqual( other.x, x )
@@ -135,7 +135,7 @@ Vector4::operator!=( const Vector4& other ) const
 //-------------------------------------------------------------------------------
 // Check for zero vector
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Vector4::IsZero() const
 {
     return gfx::IsZero(x*x + y*y + z*z + w*w);
@@ -148,7 +148,7 @@ Vector4::IsZero() const
 //-------------------------------------------------------------------------------
 // Check for unit vector
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Vector4::IsUnit() const
 {
     return gfx::IsZero(1.0f - x*x - y*y - z*z - w*w);

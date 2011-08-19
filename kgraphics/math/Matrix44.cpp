@@ -123,7 +123,7 @@ operator<<(Writer& out, const Matrix44& source)
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Matrix44::operator==( const Matrix44& other ) const
 {
     for (unsigned int i = 0; i < 16; ++i)
@@ -141,7 +141,7 @@ Matrix44::operator==( const Matrix44& other ) const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Matrix44::operator!=( const Matrix44& other ) const
 {
     for (unsigned int i = 0; i < 16; ++i)
@@ -159,7 +159,7 @@ Matrix44::operator!=( const Matrix44& other ) const
 //-------------------------------------------------------------------------------
 // Check for zero matrix
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Matrix44::IsZero() const
 {
     for (unsigned int i = 0; i < 16; ++i)
@@ -177,7 +177,7 @@ Matrix44::IsZero() const
 //-------------------------------------------------------------------------------
 // Check for identity matrix
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Matrix44::IsIdentity() const
 {
     return AreEqual( 1.0f, mV[0] )

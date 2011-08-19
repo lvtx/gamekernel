@@ -60,7 +60,7 @@ Vector2::LengthSquared() const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Vector2::operator==( const Vector2& other ) const
 {
     if ( AreEqual( other.x, x )
@@ -76,7 +76,7 @@ Vector2::operator==( const Vector2& other ) const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Vector2::operator!=( const Vector2& other ) const
 {
     if ( AreEqual( other.x, x )
@@ -92,7 +92,7 @@ Vector2::operator!=( const Vector2& other ) const
 //-------------------------------------------------------------------------------
 // Check for zero vector
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Vector2::IsZero() const
 {
     return gfx::IsZero(x*x + y*y);

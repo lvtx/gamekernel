@@ -91,7 +91,7 @@ Capsule::LengthSquared() const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Capsule::operator==( const Capsule& other ) const
 {
     if ( other.mSegment == mSegment && other.mRadius == mRadius )
@@ -106,7 +106,7 @@ Capsule::operator==( const Capsule& other ) const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Capsule::operator!=( const Capsule& other ) const
 {
     if ( other.mSegment == mSegment && other.mRadius == mRadius )
@@ -228,7 +228,7 @@ Capsule::Transform( float scale, const Matrix33& rotate,
 // ---------------------------------------------------------------------------
 // Determine intersection between capsule and capsule
 //-----------------------------------------------------------------------------
-Bool 
+bool 
 Capsule::Intersect( const Capsule& other ) const
 {
     float radiusSum = mRadius + other.mRadius;
@@ -246,7 +246,7 @@ Capsule::Intersect( const Capsule& other ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between capsule and line
 //-----------------------------------------------------------------------------
-Bool
+bool
 Capsule::Intersect( const Line3& line ) const
 {
     // test distance between line and segment vs. radius
@@ -260,7 +260,7 @@ Capsule::Intersect( const Line3& line ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between capsule and ray
 //-----------------------------------------------------------------------------
-Bool
+bool
 Capsule::Intersect( const Ray3& ray ) const
 {
     // test distance between ray and segment vs. radius
@@ -275,7 +275,7 @@ Capsule::Intersect( const Ray3& ray ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between capsule and line segment
 //-----------------------------------------------------------------------------
-Bool
+bool
 Capsule::Intersect( const LineSegment3& segment ) const
 {
     // test distance between segment and segment vs. radius
@@ -446,7 +446,7 @@ Merge( Capsule& result, const Capsule& b0, const Capsule& b1 )
 // ---------------------------------------------------------------------------
 // Compute parameters for collision between capsule and capsule
 //-----------------------------------------------------------------------------
-Bool 
+bool 
 Capsule::ComputeCollision( const Capsule& other, Vector3& collisionNormal, 
                       Vector3& collisionPoint, float& penetration ) const
 {

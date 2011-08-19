@@ -66,7 +66,7 @@ operator<<(Writer& out, const Hermite& source)
 //-------------------------------------------------------------------------------
 // Set up sample points
 //-------------------------------------------------------------------------------
-Bool
+bool
 Hermite::Initialize( const Vector3* positions,
                        const Vector3* inTangents,
                        const Vector3* outTangents,
@@ -121,7 +121,7 @@ Hermite::Initialize( const Vector3* positions,
 //-------------------------------------------------------------------------------
 // Set up sample points for clamped spline
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Hermite::InitializeClamped( const Vector3* positions, 
                               const float* times,
                               unsigned int count,
@@ -215,7 +215,7 @@ Hermite::InitializeClamped( const Vector3* positions,
 //-------------------------------------------------------------------------------
 // Set up sample points for natural spline
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Hermite::InitializeNatural( const Vector3* positions, 
                               const float* times,
                               unsigned int count )
@@ -317,7 +317,7 @@ Hermite::InitializeNatural( const Vector3* positions,
 //-------------------------------------------------------------------------------
 // Set up sample points for cyclic spline
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Hermite::InitializeCyclic( const Vector3* positions, 
                               const float* times,
                               unsigned int count )
@@ -412,7 +412,7 @@ Hermite::InitializeCyclic( const Vector3* positions,
 //-------------------------------------------------------------------------------
 // Set up sample points for cyclic spline
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Hermite::InitializeAcyclic( const Vector3* positions, 
                               const float* times,
                               unsigned int count )

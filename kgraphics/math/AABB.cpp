@@ -75,7 +75,7 @@ operator<<(Writer& out, const AABB& source)
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 AABB::operator==( const AABB& other ) const
 {
     if ( other.mMinima == mMinima && other.mMaxima == mMaxima )
@@ -90,7 +90,7 @@ AABB::operator==( const AABB& other ) const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 AABB::operator!=( const AABB& other ) const
 {
     if ( other.mMinima != mMinima || other.mMaxima != mMaxima )
@@ -160,7 +160,7 @@ AABB::AddPoint( const Vector3& point )
 // ---------------------------------------------------------------------------
 // Determine intersection between AABB and AABB
 //-----------------------------------------------------------------------------
-Bool 
+bool 
 AABB::Intersect( const AABB& other ) const
 {
     // if separated in x direction
@@ -185,7 +185,7 @@ AABB::Intersect( const AABB& other ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between AABB and line
 //-----------------------------------------------------------------------------
-Bool
+bool
 AABB::Intersect( const Line3& line ) const
 {
     float maxS = -FLT_MAX;
@@ -234,7 +234,7 @@ AABB::Intersect( const Line3& line ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between AABB and ray
 //-----------------------------------------------------------------------------
-Bool
+bool
 AABB::Intersect( const Ray3& ray ) const
 {
     float maxS = -FLT_MAX;
@@ -283,7 +283,7 @@ AABB::Intersect( const Ray3& ray ) const
 // ---------------------------------------------------------------------------
 // Determine intersection between AABB and line segment
 //-----------------------------------------------------------------------------
-Bool
+bool
 AABB::Intersect( const LineSegment3& segment ) const
 {
     float maxS = -FLT_MAX;

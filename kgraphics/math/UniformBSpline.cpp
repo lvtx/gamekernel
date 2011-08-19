@@ -56,7 +56,7 @@ operator<<(Writer& out, const UniformBSpline& source)
 //-------------------------------------------------------------------------------
 // Set up sample points
 //-------------------------------------------------------------------------------
-Bool
+bool
 UniformBSpline::Initialize( const Vector3* positions,
                               unsigned int count,
                               float startTime, float endTime )

@@ -54,7 +54,7 @@ operator<<(Writer& out, const Linear& source)
 //-------------------------------------------------------------------------------
 // Set up sample points
 //-------------------------------------------------------------------------------
-Bool
+bool
 Linear::Initialize( const Vector3* samples, const float* times,
                       unsigned int count )
 {

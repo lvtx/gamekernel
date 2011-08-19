@@ -139,7 +139,7 @@ DistanceSquared( const Vector3& p0, const Vector3& p1 )
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Vector3::operator==( const Vector3& other ) const
 {
     if ( AreEqual( other.x, x )
@@ -156,7 +156,7 @@ Vector3::operator==( const Vector3& other ) const
 //-------------------------------------------------------------------------------
 // Comparison operator
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Vector3::operator!=( const Vector3& other ) const
 {
     if ( AreEqual( other.x, x )
@@ -173,7 +173,7 @@ Vector3::operator!=( const Vector3& other ) const
 //-------------------------------------------------------------------------------
 // Check for zero vector
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Vector3::IsZero() const
 {
     return gfx::IsZero(x*x + y*y + z*z);
@@ -186,7 +186,7 @@ Vector3::IsZero() const
 //-------------------------------------------------------------------------------
 // Check for unit vector
 //-------------------------------------------------------------------------------
-Bool 
+bool 
 Vector3::IsUnit() const
 {
     return gfx::IsZero(1.0f - x*x - y*y - z*z);

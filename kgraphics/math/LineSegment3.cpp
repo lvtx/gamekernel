@@ -127,7 +127,7 @@ LineSegment3::LengthSquared() const
 // ---------------------------------------------------------------------------
 // Are two LineSegment3's equal?
 //----------------------------------------------------------------------------
-Bool
+bool
 LineSegment3::operator==( const LineSegment3& segment ) const
 {
     return ((segment.mOrigin == mOrigin && segment.mDirection == mDirection) ||
@@ -141,7 +141,7 @@ LineSegment3::operator==( const LineSegment3& segment ) const
 // ---------------------------------------------------------------------------
 // Are two LineSegment3's not equal?
 //----------------------------------------------------------------------------
-Bool
+bool
 LineSegment3::operator!=( const LineSegment3& segment ) const
 {
     return !((segment.mOrigin == mOrigin && segment.mDirection == mDirection) ||
